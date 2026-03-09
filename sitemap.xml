@@ -61,6 +61,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://a-invest.pro/blog/prodazha-biznesa.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://a-invest.pro/blog/kak-prodat-biznes.html</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://a-invest.pro/privacy.html</loc>
     <lastmod>2026-03-09</lastmod>
     <changefreq>yearly</changefreq>
