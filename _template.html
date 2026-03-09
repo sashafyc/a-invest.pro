@@ -1,46 +1,180 @@
 <!DOCTYPE html>
+<!--
+════════════════════════════════════════════════════════════════
+  ИНСТРУКЦИЯ ПО СОЗДАНИЮ СТАТЬИ — A-Invest Blog
+  Прочитай полностью перед началом работы
+════════════════════════════════════════════════════════════════
+
+  ШАГ 1 — ОПРЕДЕЛИ ПАРАМЕТРЫ СТАТЬИ
+  ───────────────────────────────────
+  SLUG         — URL статьи, только латиница и дефисы
+                 Пример: kak-prodat-biznes-bystro
+  ЗАГОЛОВОК    — Ключевой запрос в точном вхождении, 50–70 символов
+                 Начинать с глагола или вопросительного слова: Как, Почему, Что
+  DESCRIPTION  — 150–160 символов. Начинать с ответа на вопрос, ключ в первых словах
+  KEYWORDS     — 5–8 ключевых фраз через запятую
+  КАТЕГОРИЯ    — одна из: Продажа бизнеса / Покупка бизнеса / Инвестиции /
+                 Кейс / Стратегия / Масштабирование / Due Diligence
+  ДАТА         — формат: 2026-03-09 и «9 марта 2026»
+  ВРЕМЯ ЧТЕНИЯ — ~1 минута на 150–200 слов
+
+  ШАГ 2 — ЗАМЕНИ ВСЕ ВХОЖДЕНИЯ
+  ─────────────────────────────
+  SLUG            → slug статьи (например: kak-prodat-biznes-bystro)
+  ЗАГОЛОВОК       → заголовок H1 и мета
+  ОПИСАНИЕ        → description и og:description
+  KEYWORDS        → ключевые слова
+  КАТЕГОРИЯ       → тег статьи
+  ДД МЕСЯЦ ГГГГ  → дата публикации
+  YYYY-MM-DD      → дата в ISO формате
+  X               → время чтения в минутах
+  LEAD            → вводный абзац (см. правила ниже)
+
+  ШАГ 3 — НАПИШИ КОНТЕНТ (правила)
+  ──────────────────────────────────
+  СТРУКТУРА СТАТЬИ:
+  • 5–8 разделов H2, каждый с id для якоря (id="slug-razdela")
+  • Первый H2 — ответ на главный вопрос статьи
+  • Последний H2 — "Итоги" или "Что делать дальше"
+  • Минимум 1000 слов, идеально 1500–2500
+
+  LEAD (вводный абзац):
+  • 2–3 предложения, прямой ответ на вопрос заголовка
+  • Именно это цитируют Яндекс ИИ, ChatGPT и другие нейросети
+  • Формула: [Ответ на вопрос]. [Почему именно так]. [Что читатель узнает из статьи]
+
+  КАЖДЫЙ H2:
+  • Содержит ключевое слово или его синоним
+  • Отвечает на конкретный вопрос читателя
+  • После H2 — сразу абзац текста, не список
+
+  ОБЯЗАТЕЛЬНЫЕ ЭЛЕМЕНТЫ:
+  • 1–2 blockquote с цитатой Александра
+  • 1–2 highlight-box с важными данными или выводами
+  • 1 num-grid со статистикой (40+ сделок, 850 млн, с 2018)
+  • Списки ul/ol там, где есть перечисление от 3+ пунктов
+  • Жирный текст (strong) для ключевых мыслей — 1–2 раза в разделе
+
+  НЕЙРООПТИМИЗАЦИЯ (для ИИ-ответов):
+  • В конце статьи — раздел FAQ: 3–5 вопросов и чётких ответов
+  • Ответы в FAQ — полные, 2–4 предложения каждый
+  • Используй точные числа, даты, факты — нейросети их любят
+  • Не используй слова «возможно», «наверное» — пиши утвердительно
+
+  ШАГ 4 — ВНУТРЕННИЕ ССЫЛКИ (обязательно!)
+  ──────────────────────────────────────────
+  Правила перелинковки:
+  • Минимум 2–3 ссылки на другие статьи блога внутри текста
+  • Ставь ссылку там, где тема упоминается естественно
+  • Анкор ссылки = заголовок статьи или ключевое слово
+  • Не ставь больше 1 ссылки на одну и ту же статью
+  • В секции "Читайте также" — 3 карточки с релевантными статьями
+
+  Пример внутренней ссылки в тексте:
+  <a href="kak-prodat-biznes-bystro.html" style="color:var(--gold)">как продать бизнес быстро</a>
+
+  Существующие статьи для перелинковки:
+  • kak-prodat-biznes-bystro.html        — Как продать бизнес быстро
+  • kak-kupit-gotovyj-biznes.html        — Как купить готовый бизнес
+  • kassovyj-razryv-kak-zakryt-za-3-dnya.html — Кассовый разрыв: закрыть за 3 дня
+  • strategiya-rosta-biznesa.html         — Стратегическое планирование
+  • kak-masshtabirovat-biznes.html        — Как масштабировать бизнес
+  • chastnye-investicii-v-realnyj-sektor.html — Частные инвестиции в реальный сектор
+  • kak-ya-ne-prodal-biznes-za-27-mln.html    — Как я не продал бизнес за 27 млн
+
+  ШАГ 5 — ПОСЛЕ НАПИСАНИЯ СТАТЬИ (обязательно!)
+  ────────────────────────────────────────────────
+  □ Добавить карточку в blog.html (в .blog-grid перед заглушкой "Скоро"):
+
+    <a href="blog/SLUG.html" class="blog-card">
+      <div class="bc-body">
+        <span class="bc-tag">КАТЕГОРИЯ</span>
+        <div class="bc-title">ЗАГОЛОВОК СТАТЬИ</div>
+        <p class="bc-desc">ОПИСАНИЕ 2–3 предложения для карточки.</p>
+      </div>
+      <div class="bc-footer">
+        <span class="bc-date">ДД МЕСЯЦ ГГГГ · X мин</span>
+        <span class="bc-read">Читать →</span>
+      </div>
+    </a>
+
+  □ Добавить в sitemap.xml (перед </urlset>):
+
+    <url>
+      <loc>https://a-invest.pro/blog/SLUG.html</loc>
+      <lastmod>YYYY-MM-DD</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+    </url>
+
+  □ Добавить ссылку на новую статью в секцию "Читайте также"
+    хотя бы одной из существующих статей (перекрёстное упоминание)
+
+  □ Сохранить файл как: blog/SLUG.html
+
+════════════════════════════════════════════════════════════════
+-->
 <html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
-<!-- ЗАМЕНИТЬ: заголовок страницы, должен содержать ключевой запрос (60–70 символов) -->
-<title>ЗАГОЛОВОК СТАТЬИ — A-Invest | Продажа бизнеса</title>
-<!-- ЗАМЕНИТЬ: описание 150–160 символов, начинать с ответа на вопрос -->
-<meta name="description" content="ОПИСАНИЕ СТАТЬИ 150-160 СИМВОЛОВ. Ключевой запрос в первых словах.">
-<meta name="robots" content="index,follow">
-<!-- ЗАМЕНИТЬ: URL статьи -->
-<link rel="canonical" href="https://a-invest.pro/blog/SLUG/">
 
-<!-- Open Graph -->
+<!-- ═══ SEO: TITLE — 50–70 символов, ключевой запрос в начале ═══ -->
+<title>ЗАГОЛОВОК СТАТЬИ — A-Invest | Продажа бизнеса</title>
+
+<!-- ═══ SEO: DESCRIPTION — 150–160 символов, ответ на вопрос в первых словах ═══ -->
+<meta name="description" content="ОПИСАНИЕ СТАТЬИ 150-160 СИМВОЛОВ. Ключевой запрос в первых словах. Заканчивать призывом или фактом.">
+
+<!-- ═══ SEO: KEYWORDS — 5–8 ключевых фраз через запятую ═══ -->
+<meta name="keywords" content="ключевое слово 1, ключевое слово 2, ключевое слово 3, ключевое слово 4, ключевое слово 5">
+
+<meta name="robots" content="index,follow">
+<meta name="author" content="Александр Неделюк">
+
+<!-- ═══ Canonical — указывает поисковикам основной URL страницы ═══ -->
+<link rel="canonical" href="https://a-invest.pro/blog/SLUG.html">
+
+<!-- ═══ Open Graph — как статья выглядит при шаринге в соцсетях и мессенджерах ═══ -->
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://a-invest.pro/blog/SLUG/">
-<meta property="og:title" content="ЗАГОЛОВОК СТАТЬИ">
-<meta property="og:description" content="ОПИСАНИЕ ДЛЯ СОЦСЕТЕЙ">
+<meta property="og:url" content="https://a-invest.pro/blog/SLUG.html">
+<meta property="og:title" content="ЗАГОЛОВОК СТАТЬИ — без бренда, до 90 символов">
+<meta property="og:description" content="ОПИСАНИЕ ДЛЯ СОЦСЕТЕЙ — до 200 символов, с крючком">
 <meta property="og:image" content="https://a-invest.pro/Resources/photo.jpeg">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:site_name" content="A-Invest">
 <meta property="article:author" content="Александр Неделюк">
-<!-- ЗАМЕНИТЬ: дата публикации -->
-<meta property="article:published_time" content="2026-01-01T00:00:00+03:00">
+<meta property="article:section" content="КАТЕГОРИЯ">
+<!-- ═══ Даты: published_time — дата первой публикации, modified_time — последнего обновления ═══ -->
+<meta property="article:published_time" content="YYYY-MM-DDT10:00:00+03:00">
+<meta property="article:modified_time" content="YYYY-MM-DDT10:00:00+03:00">
 
-<!-- Schema.org: Article + BreadcrumbList -->
+<!-- ═══════════════════════════════════════════════════════════════
+     Schema.org: Article
+     Это машиночитаемые данные для Google, Яндекс и нейросетей.
+     Заполнять точно — влияет на rich snippets и AI-ответы.
+     ═══════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "ЗАГОЛОВОК СТАТЬИ",
   "description": "ОПИСАНИЕ СТАТЬИ",
+  "keywords": "ключевое слово 1, ключевое слово 2, ключевое слово 3",
   "image": "https://a-invest.pro/Resources/photo.jpeg",
-  "datePublished": "2026-01-01",
-  "dateModified": "2026-01-01",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "wordCount": 1500,
+  "inLanguage": "ru",
   "author": {
     "@type": "Person",
     "name": "Александр Неделюк",
     "url": "https://a-invest.pro/about.html",
-    "jobTitle": "Основатель A-Invest, бизнес-брокер"
+    "jobTitle": "Основатель A-Invest, бизнес-брокер",
+    "knowsAbout": ["продажа бизнеса", "бизнес-брокеридж", "M&A", "инвестиции в малый бизнес"]
   },
   "publisher": {
     "@type": "Organization",
     "name": "A-Invest",
+    "url": "https://a-invest.pro",
     "logo": {
       "@type": "ImageObject",
       "url": "https://a-invest.pro/Resources/logo.png"
@@ -48,19 +182,66 @@
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://a-invest.pro/blog/SLUG/"
+    "@id": "https://a-invest.pro/blog/SLUG.html"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "ТЕМА СТАТЬИ"
   }
 }
 </script>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     Schema.org: BreadcrumbList — хлебные крошки для поисковиков
+     ═══════════════════════════════════════════════════════════════ -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
     {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://a-invest.pro/"},
-    {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://a-invest.pro/blog/"},
-    {"@type": "ListItem", "position": 3, "name": "ЗАГОЛОВОК СТАТЬИ", "item": "https://a-invest.pro/blog/SLUG/"}
+    {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://a-invest.pro/blog.html"},
+    {"@type": "ListItem", "position": 3, "name": "ЗАГОЛОВОК СТАТЬИ", "item": "https://a-invest.pro/blog/SLUG.html"}
+  ]
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════
+     Schema.org: FAQPage — КЛЮЧЕВОЙ элемент для нейрооптимизации!
+     Эти данные напрямую попадают в ответы Яндекс ИИ, ChatGPT,
+     Perplexity и используются для featured snippets.
+     Заполни 3–5 реальных вопросов и чётких ответов.
+     Вопросы должны совпадать с заголовками FAQ-раздела в статье.
+     ═══════════════════════════════════════════════════════════════ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "ВОПРОС 1 — то, что реально спрашивают в поиске?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ОТВЕТ 1 — полный и самодостаточный, 2–4 предложения. Не ссылайся на статью, отвечай прямо. Используй конкретные цифры и факты."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ВОПРОС 2?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ОТВЕТ 2."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "ВОПРОС 3?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ОТВЕТ 3."
+      }
+    }
   ]
 }
 </script>
@@ -94,7 +275,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 .lbl::before{content:'';width:18px;height:1px;background:var(--gold)}
 .btn-g{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--bk);font-family:var(--f);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:16px 30px;border:none;cursor:pointer;text-decoration:none;transition:all .22s}
 .btn-g:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,169,110,.22)}
-
 /* Article layout */
 .art-hero{padding:120px 0 60px;background:var(--dk)}
 .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(245,243,238,.4);margin-bottom:24px;flex-wrap:wrap}
@@ -108,38 +288,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;letter-spacing:-.025em;color:var(--wh);margin-bottom:16px;max-width:820px}
 .art-lead{font-size:18px;font-weight:300;color:var(--dim);line-height:1.7;max-width:660px;margin-bottom:32px;border-left:3px solid var(--gold);padding-left:20px}
 .art-author{display:flex;align-items:center;gap:14px}
-.art-author-photo{width:44px;height:44px;border-radius:0;object-fit:cover;border:1px solid var(--br)}
-.art-author-info{display:flex;flex-direction:column}
+.art-author-photo{width:44px;height:44px;object-fit:cover;border:1px solid var(--br)}
 .art-author-name{font-size:13px;font-weight:600;color:var(--wh)}
 .art-author-role{font-size:11px;font-weight:300;color:rgba(245,243,238,.45)}
-
 .art-body{padding:60px 0 80px;background:var(--bk)}
 .art-layout{display:grid;grid-template-columns:1fr 300px;gap:80px;align-items:start}
-.art-content{max-width:none}
-.art-content h2{font-size:clamp(20px,2.5vw,32px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin:44px 0 16px}
+.art-content h2{font-size:clamp(20px,2.5vw,30px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin:44px 0 16px;padding-top:10px}
 .art-content h2:first-child{margin-top:0}
-.art-content h3{font-size:18px;font-weight:600;color:var(--wh);margin:32px 0 12px;line-height:1.3}
+.art-content h3{font-size:17px;font-weight:600;color:var(--wh);margin:28px 0 10px;line-height:1.3}
 .art-content p{font-size:16px;font-weight:300;color:var(--dim);line-height:1.8;margin-bottom:20px}
 .art-content p strong{color:var(--wh);font-weight:600}
-.art-content ul,.art-content ol{padding-left:0;margin-bottom:20px;list-style:none}
-.art-content ul li,.art-content ol li{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;padding:8px 0 8px 28px;border-bottom:1px solid rgba(201,169,110,.08);position:relative}
+.art-content a{color:var(--gold);text-decoration:none;border-bottom:1px solid rgba(201,169,110,.3);transition:border-color .2s}
+.art-content a:hover{border-color:var(--gold)}
+.art-content ul,.art-content ol{padding-left:0;margin-bottom:24px;list-style:none}
+.art-content ul li,.art-content ol li{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;padding:9px 0 9px 28px;border-bottom:1px solid rgba(201,169,110,.08);position:relative}
+.art-content ul li:last-child,.art-content ol li:last-child{border-bottom:none}
 .art-content ul li::before{content:'—';position:absolute;left:0;color:var(--gold);font-weight:600}
 .art-content ol{counter-reset:list}
 .art-content ol li{counter-increment:list}
 .art-content ol li::before{content:counter(list) '.';position:absolute;left:0;color:var(--gold);font-weight:700;font-size:13px}
 .art-content blockquote{border-left:3px solid var(--gold);padding:20px 24px;background:var(--dk2);margin:32px 0;font-size:17px;font-style:italic;font-weight:300;color:var(--wh);line-height:1.6}
 .art-content blockquote cite{display:block;font-size:11px;font-style:normal;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-top:12px}
-.art-content .highlight-box{background:var(--dk2);border:1px solid var(--br);padding:28px 32px;margin:32px 0}
-.art-content .highlight-box .hb-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
-.art-content .highlight-box p{margin-bottom:0;font-size:15px}
-.art-content .num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--br);border:1px solid var(--br);margin:32px 0}
-.art-content .num-cell{background:var(--dk);padding:24px;text-align:center}
-.art-content .num-big{font-size:36px;font-weight:700;color:var(--gold);letter-spacing:-.03em;display:block}
-.art-content .num-label{font-size:12px;font-weight:300;color:var(--dim)}
+.highlight-box{background:var(--dk2);border:1px solid var(--br);padding:28px 32px;margin:32px 0}
+.hb-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:12px}
+.highlight-box p{margin-bottom:0;font-size:15px}
+.num-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--br);border:1px solid var(--br);margin:32px 0}
+.num-cell{background:var(--dk);padding:24px;text-align:center}
+.num-big{font-size:32px;font-weight:700;color:var(--gold);letter-spacing:-.03em;display:block;line-height:1}
+.num-label{font-size:12px;font-weight:300;color:var(--dim);display:block;margin-top:6px}
+.steps-list{list-style:none;counter-reset:steps;padding-left:0;margin-bottom:24px}
+.steps-list li{counter-increment:steps;position:relative;padding:18px 18px 18px 64px;border-bottom:1px solid var(--br);font-size:15px;font-weight:300;color:var(--dim);line-height:1.7}
+.steps-list li:last-child{border-bottom:none}
+.steps-list li::before{content:counter(steps);position:absolute;left:0;top:16px;width:36px;height:36px;background:rgba(201,169,110,.12);border:1px solid rgba(201,169,110,.3);color:var(--gold);font-size:14px;font-weight:700;display:flex;align-items:center;justify-content:center;font-family:var(--f)}
+.steps-list li strong{color:var(--wh);display:block;font-size:15px;font-weight:600;margin-bottom:4px}
+/* FAQ section */
+.faq-list{margin:0;padding:0;list-style:none}
+.faq-item{border-bottom:1px solid var(--br);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:16px;font-weight:600;color:var(--wh);margin-bottom:10px;line-height:1.35}
+.faq-a{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
 .art-content hr{border:none;border-top:1px solid var(--br);margin:40px 0}
-
 /* Sidebar */
-.art-sidebar{}
 .sdb-sticky{position:sticky;top:100px;display:flex;flex-direction:column;gap:24px}
 .sdb-toc{background:var(--dk);border:1px solid var(--br);padding:24px}
 .sdb-toc-title{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
@@ -163,10 +352,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .sdb-author-name{font-size:14px;font-weight:600;color:var(--wh)}
 .sdb-author-role{font-size:11px;font-weight:300;color:rgba(245,243,238,.45);line-height:1.4}
 .sdb-author-bio{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65;margin-bottom:14px}
-.sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none;letter-spacing:.04em}
-.sdb-tg svg{flex-shrink:0}
+.sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none}
 .sdb-tg:hover{opacity:.8}
-
 /* Related articles */
 .art-related{padding:60px 0 80px;background:var(--dk)}
 .related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
@@ -175,18 +362,17 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .rel-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .rel-title{font-size:14px;font-weight:600;color:var(--wh);line-height:1.4;margin-bottom:8px}
 .rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65}
-
-/* CTA section */
+/* Bottom CTA */
 .art-cta-section{padding:80px 0;background:var(--bk);text-align:center}
 .art-cta-section h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
 .art-cta-section p{font-size:16px;font-weight:300;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75}
-
 @media(max-width:900px){
   nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}
   .art-layout{grid-template-columns:1fr;gap:40px}
   .art-sidebar{display:none}
   .related-grid{grid-template-columns:1fr}
-  .art-content .num-grid{grid-template-columns:1fr}
+  .num-grid{grid-template-columns:1fr}
+  .steps-list li{padding-left:50px}
 }
 </style>
 </head>
@@ -197,90 +383,142 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
   <ul class="nav-links">
     <li><a href="../index.html">Продать актив</a></li>
     <li><a href="../about.html">О компании</a></li>
-    <li><a href="index.html" style="color:var(--gold)">Блог</a></li>
+    <li><a href="../blog.html" style="color:var(--gold)">Блог</a></li>
     <li><a href="../index.html#form" class="nav-cta">Хочу оценить мой актив</a></li>
   </ul>
 </nav>
 
-<!-- HERO ARTICLE -->
+<!-- ═══ HERO — заголовок, мета и автор ═══ -->
 <section class="art-hero">
   <div class="con">
-    <!-- Breadcrumbs -->
+
+    <!-- Хлебные крошки: последний span = название текущей страницы (не ссылка) -->
     <nav class="breadcrumbs" aria-label="Навигация">
       <a href="../index.html">Главная</a>
       <span>/</span>
-      <a href="index.html">Блог</a>
+      <a href="../blog.html">Блог</a>
       <span>/</span>
-      <span>НАЗВАНИЕ СТАТЬИ</span>
+      <span>НАЗВАНИЕ СТАТЬИ (короткое, до 40 символов)</span>
     </nav>
 
-    <!-- Meta: tag + date + readtime -->
     <div class="art-meta">
+      <!-- Категория — одно слово или короткая фраза -->
       <span class="art-tag">КАТЕГОРИЯ</span>
-      <span class="art-date">ДД МЕСЯЦ ГГГГ</span>
+      <!-- datetime="YYYY-MM-DD" — машиночитаемый формат даты -->
+      <time class="art-date" datetime="YYYY-MM-DD">ДД МЕСЯЦ ГГГГ</time>
       <span class="art-readtime">X мин чтения</span>
     </div>
 
-    <!-- H1 — ключевой запрос в точном вхождении -->
-    <h1 class="art-title">КАК ПРОДАТЬ БИЗНЕС БЫСТРО: ЗАГОЛОВОК С КЛЮЧОМ</h1>
+    <!-- H1: точное вхождение ключевого запроса.
+         Формулы заголовков, которые работают:
+         "Как [сделать что-то]: [уточнение или выгода"
+         "Почему [проблема]: [причина]"
+         "[Существительное]: [что читатель узнает]"
+         НЕ использовать кавычки, восклицательные знаки, капслок -->
+    <h1 class="art-title">ЗАГОЛОВОК СТАТЬИ С КЛЮЧЕВЫМ ЗАПРОСОМ</h1>
 
-    <!-- Lead — краткий ответ на вопрос (важно для featured snippet) -->
-    <p class="art-lead">КРАТКИЙ ОТВЕТ НА ГЛАВНЫЙ ВОПРОС СТАТЬИ — 2–3 предложения. Именно это нейросети и Яндекс будут цитировать как ответ.</p>
+    <!-- LEAD: прямой ответ на вопрос заголовка.
+         Именно этот текст Яндекс ИИ и ChatGPT цитируют как ответ.
+         Формула: [Ответ]. [Почему так]. [Что читатель узнает из статьи].
+         Длина: 2–3 предложения, не более 50 слов. -->
+    <p class="art-lead">КРАТКИЙ ПРЯМОЙ ОТВЕТ НА ГЛАВНЫЙ ВОПРОС СТАТЬИ. Почему именно так. Что читатель узнает из этой статьи — без воды и вводных.</p>
 
-    <!-- Author -->
     <div class="art-author">
       <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="art-author-photo">
-      <div class="art-author-info">
-        <span class="art-author-name">Александр Неделюк</span>
-        <span class="art-author-role">Основатель A-Invest · Бизнес-брокер с 2018 года</span>
+      <div>
+        <div class="art-author-name">Александр Неделюк</div>
+        <div class="art-author-role">Основатель A-Invest · Бизнес-брокер с 2018 года · 40+ сделок</div>
       </div>
     </div>
+
   </div>
 </section>
 <div class="sep"></div>
 
-<!-- BODY: content + sidebar -->
+<!-- ═══ BODY: основной контент + сайдбар ═══ -->
 <section class="art-body">
   <div class="con">
     <div class="art-layout">
 
-      <!-- Main content -->
-      <article class="art-content" itemscope itemtype="https://schema.org/Article">
+      <!-- ═══ ОСНОВНОЙ КОНТЕНТ ═══
+           Минимум 1000 слов, идеально 1500–2500.
+           Структура: 5–8 разделов H2.
+           Каждый H2 — отвечает на конкретный вопрос читателя.
+           id у H2 — для якорных ссылок из TOC (содержания). -->
+      <article class="art-content">
 
+        <!-- ── РАЗДЕЛ 1: ответ на главный вопрос статьи ─────────────
+             H2 содержит ключевое слово или его синоним.
+             После H2 — сразу абзац, не список.
+             ── -->
         <h2 id="section-1">Раздел 1: Заголовок H2 с ключевым словом</h2>
-        <p>Текст раздела. Используйте <strong>жирный текст</strong> для выделения ключевых мыслей.</p>
+        <p>Открывающий абзац раздела. Первое предложение — главная мысль раздела. Используй <strong>жирный текст</strong> для ключевых тезисов — не больше 1–2 раз в разделе. Не злоупотребляй.</p>
+        <p>Внутренняя ссылка — пример: подробнее о том, <a href="kak-prodat-biznes-bystro.html">как продать бизнес быстро</a>, читайте в отдельном материале.</p>
 
-        <!-- Пример цитаты / выделенного блока -->
+        <!-- Цитата: используй для сильных тезисов от первого лица.
+             cite — обязателен, всегда Александр Неделюк, основатель A-Invest -->
         <blockquote>
-          Цитата или сильный тезис, который запоминается.<br>
+          Сильный тезис от первого лица — утверждение, не советы. То, что запоминается и хочется процитировать.<br>
           <cite>Александр Неделюк, основатель A-Invest</cite>
         </blockquote>
 
-        <h2 id="section-2">Раздел 2</h2>
-        <p>Текст раздела.</p>
+        <!-- ── РАЗДЕЛ 2 ─────────────────────────────────────────────── -->
+        <h2 id="section-2">Раздел 2: следующий логичный вопрос</h2>
+        <p>Текст раздела. Логика разделов: от общего к частному, или от проблемы к решению.</p>
 
-        <!-- Список -->
+        <!-- Список ul: для перечисления от 3+ однородных пунктов.
+             Каждый li — законченная мысль, не обрывок фразы. -->
         <ul>
-          <li>Пункт 1 списка</li>
-          <li>Пункт 2 списка</li>
-          <li>Пункт 3 списка</li>
+          <li>Пункт 1 — полное предложение или чёткая мысль</li>
+          <li>Пункт 2 — то же самое</li>
+          <li>Пункт 3 — то же самое</li>
         </ul>
 
-        <!-- Highlight box — для важных данных -->
+        <!-- ── РАЗДЕЛ 3: пошаговый алгоритм ──────────────────────────
+             Используй ol class="steps-list" когда есть последовательность шагов.
+             strong внутри li — заголовок шага.
+             ── -->
+        <h2 id="section-3">Раздел 3: пошаговый алгоритм (если есть)</h2>
+        <ol class="steps-list">
+          <li>
+            <strong>Название шага</strong>
+            Описание шага. Конкретные действия, а не абстрактные советы. Что именно делать, в каком порядке, на что обратить внимание.
+          </li>
+          <li>
+            <strong>Название шага</strong>
+            Описание шага.
+          </li>
+          <li>
+            <strong>Название шага</strong>
+            Описание шага.
+          </li>
+        </ol>
+
+        <!-- ── РАЗДЕЛ 4 ─────────────────────────────────────────────── -->
+        <h2 id="section-4">Раздел 4</h2>
+        <p>Текст раздела.</p>
+
+        <!-- Highlight-box: для важных данных, предупреждений, ключевых выводов.
+             hb-label — короткий заголовок блока: "Важно знать", "Ключевой вывод", "Из практики" -->
         <div class="highlight-box">
           <span class="hb-label">Важно знать</span>
-          <p>Важный тезис или данные, которые стоит выделить отдельно.</p>
+          <p>Важный тезис, данные или предупреждение, которое стоит выделить отдельно. Пишется коротко — 2–4 предложения.</p>
         </div>
 
-        <!-- Числа/статистика -->
+        <!-- ── РАЗДЕЛ 5: статистика и числа ───────────────────────────
+             num-grid: блок с тремя числами/фактами.
+             Используй реальные данные A-Invest или данные из статьи. -->
+        <h2 id="section-5">Раздел 5</h2>
+        <p>Текст раздела.</p>
+
         <div class="num-grid">
           <div class="num-cell">
             <span class="num-big">40+</span>
-            <span class="num-label">закрытых сделок</span>
+            <span class="num-label">закрытых сделок A-Invest</span>
           </div>
           <div class="num-cell">
             <span class="num-big">850 млн</span>
-            <span class="num-label">объём сделок ₽</span>
+            <span class="num-label">рублей общий объём</span>
           </div>
           <div class="num-cell">
             <span class="num-big">с 2018</span>
@@ -288,36 +526,77 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           </div>
         </div>
 
-        <h2 id="section-3">Итоги</h2>
-        <p>Заключение статьи.</p>
+        <!-- ── ИТОГИ — последний раздел ───────────────────────────────
+             Краткое резюме + переход к CTA.
+             Не повторяй всё сказанное — дай 2–3 главных вывода. -->
+        <h2 id="itogi">Итоги</h2>
+        <p>2–3 главных вывода статьи. Что читатель должен сделать после прочтения. Логичный переход к следующему шагу — консультации или оценке.</p>
+
+        <hr>
+
+        <!-- ── FAQ — обязательный раздел для нейрооптимизации ─────────
+             3–5 вопросов, которые реально задают в поиске.
+             Ответы — полные, самодостаточные, 2–4 предложения.
+             Совпадают с FAQPage schema в <head>.
+             ── -->
+        <h2 id="faq">Частые вопросы</h2>
+
+        <ul class="faq-list">
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">ВОПРОС 1 — то, что реально спрашивают в поиске?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">ОТВЕТ 1 — полный и самодостаточный. Не ссылайся на статью, отвечай прямо. Конкретные цифры и факты. 2–4 предложения.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">ВОПРОС 2?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">ОТВЕТ 2.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">ВОПРОС 3?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">ОТВЕТ 3.</p>
+            </div>
+          </li>
+        </ul>
+
+        <hr>
+
+        <p>Остались вопросы — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener">@sashafyc</a>. Отвечаю лично.</p>
 
       </article>
 
-      <!-- Sidebar -->
+      <!-- ═══ САЙДБАР ═══ -->
       <aside class="art-sidebar">
         <div class="sdb-sticky">
 
-          <!-- Table of contents -->
+          <!-- TOC: содержание. id в li > a href должны совпадать с id у H2 в статье -->
           <div class="sdb-toc">
             <span class="sdb-toc-title">Содержание</span>
             <ol>
               <li><a href="#section-1">Раздел 1</a></li>
               <li><a href="#section-2">Раздел 2</a></li>
-              <li><a href="#section-3">Итоги</a></li>
+              <li><a href="#section-3">Раздел 3</a></li>
+              <li><a href="#section-4">Раздел 4</a></li>
+              <li><a href="#section-5">Раздел 5</a></li>
+              <li><a href="#itogi">Итоги</a></li>
+              <li><a href="#faq">Частые вопросы</a></li>
             </ol>
           </div>
 
-          <!-- CTA block -->
+          <!-- CTA блок — не менять -->
           <div class="sdb-cta">
             <span class="sdb-cta-label">Первый шаг</span>
             <div class="sdb-cta-title">Экспресс-оценка вашего бизнеса</div>
-            <p class="sdb-cta-desc">Узнайте, кто купит ваш актив и за сколько — за одну встречу.</p>
+            <p class="sdb-cta-desc">Стоимость, ликвидность, портрет покупателей, стратегия продажи — за одну консультацию.</p>
             <div class="sdb-price">25 000 ₽</div>
-            <p class="sdb-price-note">Оценка стоимости, ликвидности, стратегия продажи</p>
-            <a href="../index.html#form" class="sdb-btn">Оставить заявку</a>
+            <p class="sdb-price-note">Результат: понимаете как и кому продать</p>
+            <a href="../index.html#form" class="sdb-btn" onclick="if(typeof ym!=='undefined')ym(85646347,'reachGoal','blog_cta_click')">Оставить заявку</a>
           </div>
 
-          <!-- Author -->
+          <!-- Блок автора — не менять -->
           <div class="sdb-author">
             <div class="sdb-author-inner">
               <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="sdb-author-photo">
@@ -341,41 +620,63 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 </section>
 <div class="sep"></div>
 
-<!-- Related articles -->
+<!-- ═══ ЧИТАЙТЕ ТАКЖЕ — 3 карточки с релевантными статьями ═══
+     Выбирай статьи по смыслу, не случайно.
+     Логика: если статья о продаже — линкуй на оценку и покупку.
+     Если о покупке — линкуй на due diligence и инвестиции. -->
 <section class="art-related">
   <div class="con">
     <div class="lbl">Читайте также</div>
     <div class="related-grid">
       <a href="SLUG-1.html" class="rel-card">
-        <span class="rel-tag">Категория</span>
-        <div class="rel-title">Заголовок похожей статьи</div>
-        <p class="rel-desc">Краткое описание 1–2 предложения.</p>
+        <span class="rel-tag">КАТЕГОРИЯ</span>
+        <div class="rel-title">Заголовок статьи 1</div>
+        <p class="rel-desc">Краткое описание — почему эта статья полезна читателю этой.</p>
       </a>
       <a href="SLUG-2.html" class="rel-card">
-        <span class="rel-tag">Категория</span>
-        <div class="rel-title">Заголовок похожей статьи</div>
-        <p class="rel-desc">Краткое описание 1–2 предложения.</p>
+        <span class="rel-tag">КАТЕГОРИЯ</span>
+        <div class="rel-title">Заголовок статьи 2</div>
+        <p class="rel-desc">Краткое описание.</p>
       </a>
       <a href="SLUG-3.html" class="rel-card">
-        <span class="rel-tag">Категория</span>
-        <div class="rel-title">Заголовок похожей статьи</div>
-        <p class="rel-desc">Краткое описание 1–2 предложения.</p>
+        <span class="rel-tag">КАТЕГОРИЯ</span>
+        <div class="rel-title">Заголовок статьи 3</div>
+        <p class="rel-desc">Краткое описание.</p>
       </a>
     </div>
   </div>
 </section>
 <div class="sep"></div>
 
-<!-- Bottom CTA -->
+<!-- Bottom CTA — не менять -->
 <section class="art-cta-section">
   <div class="con">
     <div class="lbl">Следующий шаг</div>
     <h2>Хотите продать бизнес?<br>Начните с оценки</h2>
     <p>Узнайте реальную стоимость, ликвидность и стратегию продажи вашего актива. За 25 000 ₽ вы получите чёткий план действий.</p>
-    <a href="../index.html#form" class="btn-g">Оставить заявку на оценку <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="../index.html#form" class="btn-g" onclick="if(typeof ym!=='undefined')ym(85646347,'reachGoal','blog_bottom_cta')">Оставить заявку на оценку <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div>
 </section>
 
 <script src="../footer.js"></script>
+<script>
+// Подсветка активного раздела в TOC при скролле
+(function(){
+  var headings = document.querySelectorAll('.art-content h2[id]');
+  var tocLinks = document.querySelectorAll('.sdb-toc a');
+  function onScroll(){
+    var scrollY = window.scrollY + 120;
+    var current = '';
+    headings.forEach(function(h){
+      if(h.offsetTop <= scrollY) current = h.id;
+    });
+    tocLinks.forEach(function(a){
+      var href = a.getAttribute('href').replace('#','');
+      a.style.color = href === current ? 'var(--gold)' : '';
+    });
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+})();
+</script>
 </body>
 </html>
