@@ -6,6 +6,8 @@
 <meta name="description" content="Хотите продать бизнес или сложный актив? A-Invest находит стратегических покупателей напрямую через B2B-аутрич — без площадок и ожидания. 40+ сделок, 850 млн ₽. Экспресс-оценка от 25 000 ₽. СПб и вся Россия.">
 <meta name="keywords" content="продать готовый бизнес, продажа бизнеса СПб, бизнес-брокер, продажа сложных активов, продать IT-бизнес, продажа компании, найти покупателя на бизнес, A-Invest">
 <meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="Resources/favicon.png">
+<link rel="apple-touch-icon" href="Resources/apple-touch-icon.png">
 <link rel="canonical" href="https://a-invest.pro/">
 
 <!-- Open Graph -->
@@ -123,7 +125,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;
 .nav-cta{border:1px solid var(--gold)!important;color:var(--gold)!important;
   padding:8px 18px;font-size:12px!important;font-weight:600!important;transition:all .2s!important}
 .nav-cta:hover{background:var(--gold)!important;color:var(--bk)!important}
-.con{max-width:1120px;margin:0 auto;padding:0 60px}
+.con{max-width:1120px;margin:0 auto;padding:0 60px;width:100%}
 .sep{height:1px;background:var(--br)}
 .lbl{display:inline-flex;align-items:center;gap:8px;font-size:10px;font-weight:700;
   letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:14px}
@@ -162,7 +164,7 @@ h2{font-size:clamp(26px,3vw,42px);font-weight:700;line-height:1.18;
   background:radial-gradient(ellipse,rgba(201,169,110,.055) 0%,transparent 65%)}
 .hg2{position:absolute;bottom:5%;left:-5%;width:30vw;height:30vw;pointer-events:none;
   background:radial-gradient(ellipse,rgba(201,169,110,.03) 0%,transparent 60%)}
-.hi{position:relative;z-index:2;max-width:740px}
+.hi{position:relative;z-index:2}
 .h-eye{display:inline-flex;align-items:center;gap:10px;font-size:10px;font-weight:700;
   letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px;
   opacity:0;animation:fu .7s ease .15s forwards}
@@ -249,7 +251,8 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
 #form::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);
   width:600px;height:600px;pointer-events:none;
   background:radial-gradient(ellipse,rgba(201,169,110,.05) 0%,transparent 60%)}
-.offl{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:2}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;position:relative;z-index:2}
+.form-lead{font-size:16px;font-weight:300;color:var(--dim);line-height:1.75;margin-top:16px}
 .oli{list-style:none;display:flex;flex-direction:column;gap:13px;margin-bottom:28px}
 .oi{display:flex;align-items:flex-start;gap:12px;font-size:15px;font-weight:300;color:var(--dim);line-height:1.5}
 .ck{flex-shrink:0;width:15px;height:15px;border:1px solid var(--gold);
@@ -287,26 +290,43 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
 .fok.on{display:block}
 .fok h3{font-size:21px;font-weight:700;color:var(--gold);margin-bottom:10px}
 .fok p{font-size:14px;font-weight:300;color:var(--dim)}
-#fcta{padding:96px 0;background:var(--bk);text-align:center}
-#fcta h2{max-width:660px;margin:0 auto 14px}
-#fcta .intro{margin:0 auto 32px;text-align:center}
+#fcta{padding:96px 0;background:var(--bk)}
+#fcta h2{margin:0 0 14px}
+#fcta .intro{margin:0 0 32px}
+.fcta-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:stretch}
+.fcta-left{display:flex;flex-direction:column}
+.fcta-left .btn-g{margin-top:auto;align-self:flex-start}
+.fcta-card{background:var(--dk2);border:1px solid var(--br);padding:36px;height:100%;display:flex;flex-direction:column}
+.fcta-tg{margin-top:auto}
+.fcta-stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--br);margin-bottom:28px}
+.fcta-stat{background:var(--dk2);padding:20px 22px}
+.fcta-stat-n{font-size:28px;font-weight:700;color:var(--gold);letter-spacing:-.02em;line-height:1}
+.fcta-stat-l{font-size:11px;font-weight:400;color:var(--dim);margin-top:4px}
+.fcta-tg{display:flex;align-items:center;gap:14px;padding:18px 20px;
+  background:rgba(41,168,224,.07);border:1px solid rgba(41,168,224,.2);
+  text-decoration:none;transition:background .2s}
+.fcta-tg:hover{background:rgba(41,168,224,.13)}
+.fcta-tg-ico{flex-shrink:0;width:38px;height:38px;background:var(--tg);
+  border-radius:50%;display:flex;align-items:center;justify-content:center}
+.fcta-tg-txt strong{display:block;font-size:14px;font-weight:600;color:var(--wh)}
+.fcta-tg-txt span{font-size:12px;font-weight:300;color:var(--dim)}
+@media(max-width:900px){.fcta-grid{grid-template-columns:1fr;gap:40px}}
 @media(max-width:900px){
-  h1{font-size:clamp(32px,8vw,48px)}.hst{flex-wrap:wrap;gap:18px}
+  h1{font-size:clamp(20px,6vw,48px)}.hst{flex-wrap:wrap;gap:18px}
   .pgrid{grid-template-columns:1fr}.procl{grid-template-columns:1fr;gap:40px}
   .aside{position:static}.agrid{grid-template-columns:1fr}
-  .cft{grid-template-columns:1fr}.offl{grid-template-columns:1fr;gap:40px}
-  .fbox{padding:30px 22px}}
+  .cft{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr;gap:40px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="index.html" class="nav-logo"><img src="Resources/logo.png" alt="A-Invest"></a>
+  <a href="#" class="nav-logo"><img src="Resources/logo.png" alt="A-Invest"></a>
   <ul class="nav-links">
     <li><a href="index.html">Продать актив</a></li>
     <li><a href="about.html">О компании</a></li>
     <li><a href="blog.html">Блог</a></li>
-    <li><a href="#form" class="nav-cta">Хочу оценить мой актив</a></li>
+    <li><a href="express-ocenka.html" class="nav-cta">Хочу оценить мой актив</a></li>
   </ul>
 </nav>
 
@@ -314,7 +334,7 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
   <div class="hg1"></div><div class="hg2"></div>
   <div class="con"><div class="hi">
     <div class="h-eye">A-Invest · Агентство продажи сложных активов и готового бизнеса</div>
-    <h1>Продаём бизнесы и активы,<br>которые <em>невозможно продать</em><br>через рынок</h1>
+    <h1><span style="display:block;white-space:nowrap">Продаём бизнесы и активы,</span><span style="display:block;white-space:nowrap">которые <em>нельзя продать</em></span><span style="display:block;white-space:nowrap">через объявления</span></h1>
     <p class="h-sub">Находим стратегических покупателей через прямой B2B-аутрич и сопровождаем сделку до подписания договора. Не ждём покупателя — ищем его напрямую.</p>
     <div class="hst">
       <div><span class="stn">40+</span><br><span class="stl">закрытых сделок</span></div>
@@ -325,7 +345,7 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
       <div class="ssp"></div>
       <div><span class="stn">210 млн</span><br><span class="stl">максимальная сделка</span></div>
     </div>
-    <a href="#form" class="btn-g btn-hero">Хочу оценить мой актив <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    <a href="express-ocenka.html" class="btn-g btn-hero">Хочу оценить мой актив <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
   </div></div>
 </section>
 <div class="sep"></div>
@@ -375,7 +395,7 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
         </div>
         <div class="fmt-note">Мы зарабатываем основной доход только в случае закрытия сделки.</div>
       </div>
-      <a href="#form" class="btn-o">Обсудить продажу актива <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a href="express-ocenka.html" class="btn-o">Обсудить продажу актива <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div></div>
 </section>
@@ -427,46 +447,55 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
 <div class="sep"></div>
 
 <section id="form">
-  <div class="con"><div class="offl">
-    <div class="rv">
-      <div class="lbl">Первый шаг</div>
-      <h2>Экспресс-оценка:<br>узнайте, как продать<br>ваш бизнес</h2>
-      <ul class="oli">
-        <li class="oi"><div class="ck"></div>Реальная оценка стоимости вашего актива</li>
-        <li class="oi"><div class="ck"></div>Оценка ликвидности — насколько реальна продажа</li>
-        <li class="oi"><div class="ck"></div>Портрет стратегических покупателей — кто и почему купит</li>
-        <li class="oi"><div class="ck"></div>Стратегия продажи — кому, как и через какие каналы</li>
-      </ul>
-      <div class="onote">После оценки вы будете знать: реальна ли продажа, кому продавать и как — даже если решите продавать самостоятельно.</div>
-    </div>
-    <div class="rv">
-      <div class="fbox">
-        <div id="fc">
-          <div class="fprice-wrap">
-            <div class="fprice-label">Стоимость экспресс-оценки</div>
-            <div class="fprice-row">
-              <span class="fprice-old">25 000 рублей</span>
-              <span class="fprice-new">10 000 рублей*</span>
-            </div>
-            <div class="fprice-asterisk">* при заказе оценки на сайте</div>
-          </div>
-          <label class="flab" for="ph">Ваш номер телефона</label>
-          <input class="fin" type="tel" id="ph" placeholder="+7 (___) ___-__-__" autocomplete="tel">
-          <button class="fsub" id="fsub">Хочу оценить мой актив</button>
-          <p class="fpol">Оставляя заявку, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></p>
-        </div>
-        <div class="fok" id="fok"><h3>Заявка принята ✓</h3><p>Свяжемся с вами в ближайшее время.</p></div>
+  <div class="con">
+    <div class="form-grid">
+      <div class="rv">
+        <div class="lbl">Первый шаг</div>
+        <h2>Экспресс-оценка:<br>узнайте, как продать<br>ваш бизнес</h2>
+        <p class="form-lead">За один созвон разберём ваш актив, определим реальную стоимость и составим понятный план продажи.</p>
+      </div>
+      <div class="rv">
+        <ul class="oli">
+          <li class="oi"><div class="ck"></div>Реальная оценка стоимости вашего актива</li>
+          <li class="oi"><div class="ck"></div>Оценка ликвидности — насколько реальна продажа</li>
+          <li class="oi"><div class="ck"></div>Портрет стратегических покупателей — кто и почему купит</li>
+          <li class="oi"><div class="ck"></div>Стратегия продажи — кому, как и через какие каналы</li>
+        </ul>
+        <div class="onote" style="margin-bottom:32px">После оценки вы будете знать: реальна ли продажа, кому продавать и как — даже если решите продавать самостоятельно.</div>
+        <a href="express-ocenka.html" class="btn-g">Хочу оценить мой актив <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
       </div>
     </div>
-  </div></div>
+  </div>
 </section>
 
 <section id="fcta">
-  <div class="con"><div class="rv">
-    <h2>Если ваш бизнес не продаётся<br>через брокеров — мы найдём<br>покупателя напрямую</h2>
-    <p class="intro">Мы продаём бизнесы и активы, которые невозможно продать через рынок.</p>
-    <a href="#form" class="btn-g">Хочу оценить мой актив <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-  </div></div>
+  <div class="con">
+    <div class="fcta-grid">
+      <div class="rv fcta-left">
+        <div class="lbl">Давайте начнём</div>
+        <h2>Если ваш бизнес не продаётся через брокеров — мы найдём покупателя напрямую</h2>
+        <p class="intro">Мы продаём бизнесы и активы, которые невозможно продать через рынок. Находим стратегических покупателей через прямой B2B-аутрич.</p>
+        <a href="express-ocenka.html" class="btn-g">Хочу оценить мой актив <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+      <div class="rv">
+        <div class="fcta-card">
+          <div class="fcta-stats">
+            <div class="fcta-stat"><div class="fcta-stat-n">40+</div><div class="fcta-stat-l">закрытых сделок</div></div>
+            <div class="fcta-stat"><div class="fcta-stat-n">850 млн</div><div class="fcta-stat-l">объём сделок</div></div>
+            <div class="fcta-stat"><div class="fcta-stat-n">210 млн</div><div class="fcta-stat-l">максимальная сделка</div></div>
+            <div class="fcta-stat"><div class="fcta-stat-n">с 2018</div><div class="fcta-stat-l">на рынке</div></div>
+          </div>
+          <a href="https://t.me/bizsaler" target="_blank" rel="noopener" class="fcta-tg">
+            <div class="fcta-tg-ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.447 1.394c-.16.16-.295.295-.605.295l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.12L8.32 14.617l-2.96-.924c-.643-.204-.657-.643.136-.953l11.57-4.461c.537-.194 1.006.131.828.942z"/></svg></div>
+            <div class="fcta-tg-txt">
+              <strong>Подписаться на канал</strong>
+              <span>@bizsaler · сделки, кейсы, аналитика</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <script>
@@ -478,66 +507,11 @@ h1 em{font-style:italic;color:var(--gold);font-weight:400}
   });
 })();
 
+// CTA click tracking
 (function(){
-  var b=document.getElementById('fsub');
-  var i=document.getElementById('ph');
-
-  // Phone input: autofill +7 on focus, format RU or generic intl
-  i.addEventListener('focus',function(){
-    if(!this.value) this.value='+7 ';
-  });
-  i.addEventListener('input',function(){
-    this.classList.remove('er');
-    var raw=this.value;
-    // Если начинается с +7 — форматируем по российской маске
-    if(raw.startsWith('+7')){
-      var v=raw.replace(/\D/g,'');
-      if(v.charAt(0)==='8')v='7'+v.slice(1);
-      v=v.slice(0,11);
-      var r='+7';
-      if(v.length>1)r+=' ('+v.slice(1,4);
-      if(v.length>4)r+=') '+v.slice(4,7);
-      if(v.length>7)r+='-'+v.slice(7,9);
-      if(v.length>9)r+='-'+v.slice(9,11);
-      this.value=r;
-    } else if(raw.startsWith('+')){
-      // Другая страна — просто оставляем + и цифры, пробелы не убираем
-      var digits=raw.replace(/[^\d\+\s\-\(\)]/g,'');
-      this.value=digits;
-    } else if(!raw){
-      // пусто — ничего
-    } else {
-      // начали с цифры без + — добавим +
-      this.value='+'+raw.replace(/\D/g,'');
-    }
-  });
-
-  // Submit via FormSubmit
-  b.addEventListener('click',function(e){
-    e.preventDefault();
-    if(i.value.replace(/\D/g,'').length<10){i.classList.add('er');i.focus();return;}
-    b.disabled=true;b.textContent='Отправляем…';
-    var data=new FormData();
-    data.append('phone',i.value);
-    data.append('source','a-invest.pro');
-    data.append('_subject','Новая заявка с сайта A-Invest');
-    data.append('_captcha','false');
-    data.append('_template','table');
-    fetch('https://formsubmit.co/ajax/ain@a-invest.pro',{method:'POST',body:data,headers:{'Accept':'application/json'}})
-    .then(function(r){return r.json();})
-    .then(function(r){
-      if(r.success){
-        if(typeof ym!=='undefined')ym(85646347,'reachGoal','form_submit');
-        document.getElementById('fc').style.display='none';
-        document.getElementById('fok').classList.add('on');
-      } else {
-        b.disabled=false;b.textContent='Хочу оценить мой актив';
-        alert('Ошибка отправки. Попробуйте ещё раз.');
-      }
-    })
-    .catch(function(){
-      b.disabled=false;b.textContent='Хочу оценить мой актив';
-      alert('Ошибка соединения. Попробуйте ещё раз.');
+  document.querySelectorAll('a[href="express-ocenka.html"]').forEach(function(el){
+    el.addEventListener('click',function(){
+      if(typeof ym!=='undefined')ym(85646347,'reachGoal','cta_click');
     });
   });
 })();
