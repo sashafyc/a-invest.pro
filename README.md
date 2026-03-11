@@ -29,7 +29,7 @@ A-Invest / a-invest.pro
 ├── privacy.html         — политика обработки ПД (152-ФЗ)
 ├── blog/                — папка со статьями
 ├── Resources/           — изображения (photo.jpeg, logo.png, favicon.png, alexander.jpg, review-*.png)
-├── footer.js, nav.js    — общие блоки (подключаются на всех страницах)
+├── js/                  — скрипты (nav.js, footer.js, related.js, blog-layout.js, send.php)
 ├── _template.html       — шаблон для новых статей (читать инструкцию внутри — ШАГ 1–5!)
 ├── _materials/          — рабочие материалы (в .gitignore)
 │   ├── brief.md                — общая инфа о проекте
@@ -69,7 +69,7 @@ A-Invest / a-invest.pro
 - [ ] Карточка в `blog.html`
 - [ ] URL в `sitemap.xml`
 - [ ] Перелинковка в 1–2 существующих статьях
-- [ ] Список статей обновлён в `_template.html`
+- [ ] `js/related.js` — добавить статью в массив articles
 - [ ] Статус в `_materials/content-guide.md` → ✅
 - [ ] Список статей в `README.md` обновлён
 - [ ] Коммит и пуш

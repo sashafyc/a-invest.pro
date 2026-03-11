@@ -1,16 +1,17 @@
 (function(){
+  var b = location.pathname.indexOf('/blog/') !== -1 ? '../' : '';
   var footer = `
 <footer id="site-footer">
   <div class="foot-inner">
     <div class="foot-left">
-      <a href="index.html" class="foot-logo">
+      <a href="${b}index.html" class="foot-logo">
         <svg width="28" height="28" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <rect width="40" height="40" fill="#c9a96e" opacity="0.12" rx="2"/>
           <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" fill="#c9a96e" font-family="'Fira Sans',sans-serif" font-size="18" font-weight="700" letter-spacing="-1">A</text>
         </svg>
         <span class="foot-logo-txt">А-Инвест</span>
       </a>
-      <p class="foot-copy">© 2026 Все права защищены · <a href="privacy.html" class="foot-prv">Политика конфиденциальности</a></p>
+      <p class="foot-copy">© 2026 Все права защищены · <a href="${b}privacy.html" class="foot-prv">Политика конфиденциальности</a></p>
     </div>
     <div class="foot-mid">
       <p>ИНН 781902503653</p>
@@ -30,7 +31,7 @@
   var cookieBanner = `
 <div id="cookie-banner" style="display:none">
   <div class="ck-inner">
-    <p>Мы используем cookie-файлы и Яндекс Метрику для анализа посещаемости. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" class="ck-link">политикой обработки данных</a>.</p>
+    <p>Мы используем cookie-файлы и Яндекс Метрику для анализа посещаемости. Продолжая использовать сайт, вы соглашаетесь с <a href="${b}privacy.html" class="ck-link">политикой обработки данных</a>.</p>
     <button id="ck-accept" class="ck-btn">Принять</button>
     <button id="ck-decline" class="ck-btn ck-btn-sec">Отклонить</button>
   </div>

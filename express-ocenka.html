@@ -728,7 +728,7 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;letter-spac
     data.append('page',location.pathname);
     data.append('utm',location.search);
     data.append('referrer',document.referrer);
-    fetch('/send.php',{method:'POST',body:data})
+    fetch('/js/send.php',{method:'POST',body:data})
     .then(function(r){return r.json();})
     .then(function(r){
       if(r.success){
