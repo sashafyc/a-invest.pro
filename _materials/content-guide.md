@@ -164,22 +164,25 @@
 **Telegraph** (`telegraph.html`)
 - 80–90% от оригинала, зеркало для SEO
 - Без авторизации. Clipboard HTML paste → опубликовать
-- Финал: «Оригинал: a-invest.pro/blog/SLUG.html»
+- Финал: «Оригинал: a-invest.pro/blog/SLUG.html?utm_source=telegraph&utm_medium=article»
 
 **TenChat** (`tenchat.html`)
 - 400–600 символов, plain text
 - Буллеты через тире (НЕ нумеровать!), ссылка, хэштеги
 - **Escape после каждого хэштега** (автодополнение)
+- Ссылка без UTM (видна как текст)
 
 **Дзен** (`dzen.html`)
 - 60–70%, личный угол, storytelling
 - Заголовок отличается от оригинала (указать в комментарии файла)
 - Clipboard HTML paste
+- Ссылка: `a-invest.pro/blog/SLUG.html?utm_source=dzen&utm_medium=article`
 
 **Spark** (`spark.html`)
 - 50–60%, инвестиционный угол
 - Чередование: компания ↔ личный
 - **ПОСЛЕДНИМ!** Регламент: Claude пишет «залогинься» → заполняет через JS → зовёт нажать «Опубликовать»
+- Ссылка: `a-invest.pro/blog/SLUG.html?utm_source=spark&utm_medium=article`
 
 ### 2 дополнительные (по ситуации)
 

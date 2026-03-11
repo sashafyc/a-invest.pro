@@ -725,11 +725,10 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;letter-spac
     b.disabled=true;b.textContent='Отправляем…';
     var data=new FormData();
     data.append('phone',ph.value);
-    data.append('source','a-invest.pro/express-ocenka');
-    data.append('_subject','Новая заявка на экспресс-оценку — A-Invest');
-    data.append('_captcha','false');
-    data.append('_template','table');
-    fetch('https://formsubmit.co/ajax/ain@a-invest.pro',{method:'POST',body:data,headers:{'Accept':'application/json'}})
+    data.append('page',location.pathname);
+    data.append('utm',location.search);
+    data.append('referrer',document.referrer);
+    fetch('/send.php',{method:'POST',body:data})
     .then(function(r){return r.json();})
     .then(function(r){
       if(r.success){
