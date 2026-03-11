@@ -10,7 +10,7 @@
         </svg>
         <span class="foot-logo-txt">А-Инвест</span>
       </a>
-      <p class="foot-copy">© 2026 Все права защищены</p>
+      <p class="foot-copy">© 2026 Все права защищены · <a href="privacy.html" class="foot-prv">Политика конфиденциальности</a></p>
     </div>
     <div class="foot-mid">
       <p>ИНН 781902503653</p>
@@ -26,6 +26,16 @@
   </div>
 </footer>`;
 
+  // Cookie consent banner
+  var cookieBanner = `
+<div id="cookie-banner" style="display:none">
+  <div class="ck-inner">
+    <p>Мы используем cookie-файлы и Яндекс Метрику для анализа посещаемости. Продолжая использовать сайт, вы соглашаетесь с <a href="privacy.html" class="ck-link">политикой обработки данных</a>.</p>
+    <button id="ck-accept" class="ck-btn">Принять</button>
+    <button id="ck-decline" class="ck-btn ck-btn-sec">Отклонить</button>
+  </div>
+</div>`;
+
   var style = `
 <style>
 #site-footer{background:#0d0d0d;border-top:1px solid rgba(201,169,110,.2);padding:36px 60px}
@@ -34,6 +44,8 @@
 .foot-logo{display:flex;align-items:center;gap:10px;text-decoration:none}
 .foot-logo-txt{font-family:'Fira Sans',sans-serif;font-size:15px;font-weight:600;color:#f5f3ee;letter-spacing:.04em}
 .foot-copy{font-size:11px;color:rgba(245,243,238,.45);font-weight:300}
+.foot-prv{color:rgba(201,169,110,.5);text-decoration:none;transition:color .2s}
+.foot-prv:hover{color:#c9a96e}
 .foot-mid{text-align:center}
 .foot-mid p{font-size:12px;color:rgba(245,243,238,.4);font-weight:300;line-height:1.8}
 .foot-right{display:flex;justify-content:flex-end}
@@ -43,11 +55,23 @@
 .foot-contact:hover{border-color:#c9a96e;color:#c9a96e;background:rgba(201,169,110,.06)}
 .foot-contact svg{flex-shrink:0;opacity:.7}
 .foot-contact:hover svg{opacity:1}
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(17,17,17,.97);border-top:1px solid rgba(201,169,110,.2);backdrop-filter:blur(12px);padding:16px 24px}
+.ck-inner{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.ck-inner p{flex:1;min-width:240px;font-family:'Fira Sans',sans-serif;font-size:13px;font-weight:300;color:rgba(245,243,238,.7);line-height:1.6;margin:0}
+.ck-link{color:rgba(201,169,110,.7);text-decoration:underline;text-underline-offset:2px}
+.ck-link:hover{color:#c9a96e}
+.ck-btn{font-family:'Fira Sans',sans-serif;font-size:12px;font-weight:600;letter-spacing:.06em;padding:10px 20px;border:none;cursor:pointer;transition:all .2s;white-space:nowrap}
+.ck-btn{background:#c9a96e;color:#0a0a0a}
+.ck-btn:hover{background:#dfc08a}
+.ck-btn-sec{background:transparent;color:rgba(245,243,238,.5);border:1px solid rgba(245,243,238,.15)}
+.ck-btn-sec:hover{color:rgba(245,243,238,.8);border-color:rgba(245,243,238,.3)}
 @media(max-width:900px){
   #site-footer{padding:28px 20px}
   .foot-inner{grid-template-columns:1fr;gap:24px;text-align:center}
   .foot-logo{justify-content:center}
   .foot-right{justify-content:center}
+  .ck-inner{flex-direction:column;text-align:center}
+  .ck-inner p{min-width:auto}
 }
 </style>`;
 
@@ -55,4 +79,28 @@
   document.head.insertAdjacentHTML('beforeend', style);
   // Inject footer before </body>
   document.body.insertAdjacentHTML('beforeend', footer);
+  // Inject cookie banner
+  document.body.insertAdjacentHTML('beforeend', cookieBanner);
+
+  // Cookie consent logic
+  var consent = localStorage.getItem('cookie_consent');
+  if(!consent){
+    document.getElementById('cookie-banner').style.display='block';
+  }
+  var acceptBtn = document.getElementById('ck-accept');
+  var declineBtn = document.getElementById('ck-decline');
+  if(acceptBtn){
+    acceptBtn.addEventListener('click',function(){
+      localStorage.setItem('cookie_consent','accepted');
+      document.getElementById('cookie-banner').style.display='none';
+    });
+  }
+  if(declineBtn){
+    declineBtn.addEventListener('click',function(){
+      localStorage.setItem('cookie_consent','declined');
+      document.getElementById('cookie-banner').style.display='none';
+      // Disable Yandex Metrika if declined
+      if(window.ym){window.ym=function(){};}
+    });
+  }
 })();

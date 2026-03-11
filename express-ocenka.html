@@ -227,6 +227,11 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;letter-spac
 .fpol{font-size:11px;color:rgba(245,243,238,.3);line-height:1.6;text-align:center}
 .fpol a{color:rgba(201,169,110,.5);text-decoration:underline;text-underline-offset:2px}
 .fpol a:hover{color:var(--gold)}
+.fcheck{display:flex;align-items:flex-start;gap:10px;cursor:pointer;margin-bottom:14px;font-size:12px;color:rgba(245,243,238,.45);line-height:1.5;user-select:none}
+.fcheck input[type="checkbox"]{width:16px;height:16px;flex-shrink:0;margin-top:1px;accent-color:var(--gold);cursor:pointer}
+.fcheck a{color:rgba(201,169,110,.6);text-decoration:underline;text-underline-offset:2px}
+.fcheck a:hover{color:var(--gold)}
+.fcheck.er{color:#d94f4f}
 .fok{display:none;text-align:center;padding:32px 16px}
 .fok.on{display:block}
 .fok h3{font-size:21px;font-weight:700;color:var(--gold);margin-bottom:10px}
@@ -550,8 +555,11 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;letter-spac
           <div id="eo-fc">
             <label class="flab" for="eo-ph">Ваш номер телефона</label>
             <input class="fin" type="tel" id="eo-ph" placeholder="+7 (___) ___-__-__" autocomplete="tel">
+            <label class="fcheck">
+              <input type="checkbox" id="eo-consent">
+              <span>Даю согласие на <a href="privacy.html" target="_blank">обработку персональных данных</a></span>
+            </label>
             <button class="fsub" id="eo-fsub">Оценить мой бизнес</button>
-            <p class="fpol">Оставляя заявку, вы соглашаетесь с <a href="privacy.html" target="_blank">политикой конфиденциальности</a></p>
           </div>
           <div class="fok" id="eo-fok">
             <h3>Заявка принята ✓</h3>
@@ -706,8 +714,13 @@ h2{font-size:clamp(24px,2.8vw,38px);font-weight:700;line-height:1.18;letter-spac
     }
   });
 
+  var cb=document.getElementById('eo-consent');
+  var cbl=cb.closest('.fcheck');
+  cb.addEventListener('change',function(){cbl.classList.remove('er');});
+
   b.addEventListener('click',function(e){
     e.preventDefault();
+    if(!cb.checked){cbl.classList.add('er');return;}
     if(ph.value.replace(/\D/g,'').length<10){ph.classList.add('er');ph.focus();return;}
     b.disabled=true;b.textContent='Отправляем…';
     var data=new FormData();
