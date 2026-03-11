@@ -263,6 +263,28 @@
 }
 </script>
 
+<!-- ═══════════════════════════════════════════════════════════════
+     Schema.org: HowTo — ТОЛЬКО для пошаговых статей!
+     Если статья содержит последовательные шаги/этапы — добавь этот блок.
+     Если статья аналитическая, кейс или обзор — НЕ добавляй.
+     Google показывает HowTo расширенными сниппетами → рост CTR.
+     ═══════════════════════════════════════════════════════════════ -->
+<!-- УДАЛИТЬ ЭТОТ БЛОК ЕСЛИ СТАТЬЯ НЕ ПОШАГОВАЯ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "ЗАГОЛОВОК СТАТЬИ",
+  "description": "КРАТКОЕ ОПИСАНИЕ — что читатель научится делать.",
+  "step": [
+    {"@type": "HowToStep", "name": "ШАГ 1 — название", "text": "Описание шага, 1–2 предложения."},
+    {"@type": "HowToStep", "name": "ШАГ 2 — название", "text": "Описание шага."},
+    {"@type": "HowToStep", "name": "ШАГ 3 — название", "text": "Описание шага."}
+  ]
+}
+</script>
+<!-- /HowTo -->
+
 <!-- Yandex.Metrika counter -->
 <script type="text/javascript">(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};m[i].l=1*new Date();for(var j=0;j<document.scripts.length;j++){if(document.scripts[j].src===r){return;}}k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})(window,document,"script","https://mc.yandex.ru/metrika/tag.js","ym");ym(85646347,"init",{clickmap:true,trackLinks:true,accurateTrackBounce:true,webvisor:true});</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/85646347" style="position:absolute;left:-9999px;" alt=""/></div></noscript>
