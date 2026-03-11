@@ -4,21 +4,21 @@
   var sticky = document.querySelector('.sdb-sticky');
   if(!layout || !sidebar || !sticky) return;
 
-  var threshold = 0;
+  var hideAt = 0;
+  var showAt = 0;
   var expanded = false;
 
   function calcThreshold(){
-    // Absolute position where sidebar content ends
     var rect = sticky.getBoundingClientRect();
-    threshold = window.scrollY + rect.top + rect.height + 200;
+    hideAt = window.scrollY + rect.top + rect.height + 200;
+    showAt = hideAt - 400; // Show earlier to prevent flicker
   }
 
-  // Calculate once after layout settles
   setTimeout(calcThreshold, 100);
 
   function check(){
     var scrollY = window.scrollY + 100;
-    if(scrollY > threshold && !expanded && threshold > 0){
+    if(!expanded && scrollY > hideAt && hideAt > 0){
       expanded = true;
       sidebar.style.transition = 'opacity .3s';
       sidebar.style.opacity = '0';
@@ -26,13 +26,14 @@
         sidebar.style.display = 'none';
         layout.style.gridTemplateColumns = '1fr';
       }, 300);
-    } else if(scrollY <= threshold && expanded){
+    } else if(expanded && scrollY <= showAt){
       expanded = false;
       layout.style.gridTemplateColumns = '';
       sidebar.style.display = '';
-      // Force reflow before opacity transition
       sidebar.offsetHeight;
-      sidebar.style.opacity = '';
+      sidebar.style.transition = 'opacity .3s';
+      sidebar.style.opacity = '1';
+      setTimeout(function(){ sidebar.style.opacity = ''; }, 300);
     }
   }
 
