@@ -18,7 +18,7 @@ if (!preg_match('/\d{10,}/', preg_replace('/\D/', '', $phone))) {
 }
 
 $to      = 'ain@a-invest.pro';
-$subject = 'Новая заявка на экспресс-оценку — A-Invest';
+$subject = '=?UTF-8?B?' . base64_encode('Новая заявка на экспресс-оценку — A-Invest') . '?=';
 $body    = "Телефон: $phone\nСтраница: $page\nUTM: $utm\nОткуда пришёл: $referrer\nВремя: " . date('d.m.Y H:i:s');
 $headers = "From: noreply@a-invest.pro\r\nContent-Type: text/plain; charset=utf-8";
 
