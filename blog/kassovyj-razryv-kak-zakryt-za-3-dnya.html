@@ -113,26 +113,29 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none;letter-spacing:.04em}
 .sdb-tg:hover{opacity:.8}
 .art-related{padding:60px 0 80px;background:var(--dk)}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:block}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:flex;flex-direction:column}
 .rel-card:hover{border-color:rgba(201,169,110,.5);transform:translateY(-3px)}
 .rel-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .rel-title{font-size:14px;font-weight:600;color:var(--wh);line-height:1.4;margin-bottom:8px}
-.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65}
+.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.rel-tg{border-color:rgba(41,168,224,.35);position:relative;display:flex;flex-direction:column}
+.rel-tg:hover{border-color:rgba(41,168,224,.6)}
+.rel-tg .rel-tag{color:var(--tg)}
+.rel-tg .rel-desc{flex:1}
+.rel-tg-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--tg);border:1px solid var(--tg);border-radius:4px;transition:all .2s}
+.rel-tg:hover .rel-tg-btn{background:var(--tg);color:#fff}
+.rel-btn{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.04em}
 .art-cta-section{padding:80px 0;background:var(--bk);text-align:center}
 .art-cta-section h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
 .art-cta-section p{font-size:16px;font-weight:300;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75}
 
 /* FAQ block */
-.faq-section{margin-top:48px}
-.faq-section h2{font-size:clamp(20px,2.5vw,28px);font-weight:700;color:var(--wh);margin-bottom:24px;letter-spacing:-.02em}
-.faq-item{border-bottom:1px solid var(--br);padding:0}
-.faq-q{width:100%;background:none;border:none;cursor:pointer;text-align:left;padding:18px 0;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:var(--f);font-size:15px;font-weight:600;color:var(--wh);line-height:1.4}
-.faq-q .faq-icon{flex-shrink:0;width:20px;height:20px;border:1px solid var(--br);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold);transition:transform .25s}
-.faq-q.open .faq-icon{transform:rotate(45deg)}
-.faq-a{display:none;padding:0 0 18px;font-size:14px;font-weight:300;color:var(--dim);line-height:1.75}
-.faq-a.open{display:block}
-@media(max-width:900px){nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}.art-layout{grid-template-columns:1fr;gap:40px}.art-sidebar{display:none}.related-grid{grid-template-columns:1fr}.art-content .num-grid{grid-template-columns:1fr}}
+.faq-list{margin:0;padding:0;list-style:none}
+.faq-item{border-bottom:1px solid var(--br);padding:18px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--wh);line-height:1.4;margin:0 0 8px}
+.faq-a{font-size:14px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
+@media(max-width:900px){nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}.art-layout{grid-template-columns:1fr;gap:40px}.art-sidebar{display:none}.related-grid{grid-template-columns:repeat(2,1fr)}.art-content .num-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -232,22 +235,27 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
         <p>Этот кейс — один из многих, где правильная стратегическая сессия позволила не просто выйти из кризиса, но и обнаружить ресурс для роста.</p>
 
       
-        <div class="faq-section">
-          <h2 id="faq">Часто задаваемые вопросы</h2>
-          
-        <div class="faq-item">
-          <button class="faq-q">Что такое кассовый разрыв в бизнесе?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Ситуация, когда есть обязательства (аренда, зарплаты), но денег на счёте нет. Возникает из-за временного разрыва между расходами и поступлением выручки.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Как быстро закрыть кассовый разрыв?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Монетизируйте базу отказных лидов: создайте дешёвый входной продукт, пропишите скрипт с квалификацией, запустите акцию. В описанном кейсе онлайн-школа закрыла 700 тысяч за 3 дня без рубля на рекламу.</div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-q">Как избежать кассовых разрывов в будущем?<span class="faq-icon">+</span></button>
-          <div class="faq-a">Внедрите систему фондирования: делите поступающие деньги на операционку, резерв и инвестиции. Стройте финансовые модели на 3–6 месяцев вперёд. Установите лимиты рекламного бюджета.</div>
-        </div>
-        </div>
+        <h2 id="faq">Частые вопросы</h2>
+        <ul class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Что такое кассовый разрыв в бизнесе?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Ситуация, когда есть обязательства (аренда, зарплаты), но денег на счёте нет. Возникает из-за временного разрыва между расходами и поступлением выручки.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Как быстро закрыть кассовый разрыв?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Монетизируйте базу отказных лидов: создайте дешёвый входной продукт, пропишите скрипт с квалификацией, запустите акцию. В описанном кейсе онлайн-школа закрыла 700 тысяч за 3 дня без рубля на рекламу.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Как избежать кассовых разрывов в будущем?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Внедрите систему фондирования: делите поступающие деньги на операционку, резерв и инвестиции. Стройте финансовые модели на 3–6 месяцев вперёд. Установите лимиты рекламного бюджета.</p>
+            </div>
+          </li>
+        </ul>
       </article>
 
       <aside class="art-sidebar">
@@ -291,24 +299,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 <section class="art-related">
   <div class="con">
     <div class="lbl">Читайте также</div>
-    <div class="related-grid">
-      <a href="kak-prodat-biznes-bystro.html" class="rel-card">
-        <span class="rel-tag">Продажа бизнеса</span>
-        <div class="rel-title">Как продать бизнес быстро: пошаговое руководство для владельца</div>
-        <p class="rel-desc">5 способов найти покупателя и пошаговый алгоритм из практики 40+ сделок.</p>
-      </a>
-      <a href="kak-kupit-gotovyj-biznes.html" class="rel-card">
-        <span class="rel-tag">Покупка бизнеса</span>
-        <div class="rel-title">Как купить готовый бизнес и не остаться в дураках</div>
-        <p class="rel-desc">9 рисков при покупке бизнеса и 10 причин продажи — хорошие и плохие.</p>
-      </a>
-      <a href="strategiya-rosta-biznesa.html" class="rel-card">
-        <span class="rel-tag">Стратегия</span>
-        <div class="rel-title">Стратегическое планирование: почему бизнес не растёт так быстро, как вы думали</div>
-        <p class="rel-desc">Система сбалансированных показателей и мотивация команды на результат.</p>
-      </a>
-    </div>
-  </div>
+    <div class="related-grid"></div>
 </section>
 <div class="sep"></div>
 
@@ -322,18 +313,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 </section>
 
 
-<script>
-document.querySelectorAll('.faq-q').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    const ans=btn.nextElementSibling;
-    const isOpen=btn.classList.contains('open');
-    document.querySelectorAll('.faq-q').forEach(b=>{b.classList.remove('open');b.nextElementSibling.classList.remove('open')});
-    if(!isOpen){btn.classList.add('open');ans.classList.add('open');}
-  });
-});
-</script>
-
 <script src="../nav.js"></script>
+<script src="../related.js"></script>
 <script src="../footer.js"></script>
 </body>
 </html>

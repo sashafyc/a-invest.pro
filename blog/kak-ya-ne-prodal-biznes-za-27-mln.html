@@ -157,12 +157,19 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none}
 .sdb-tg:hover{opacity:.8}
 .art-related{padding:60px 0 80px;background:var(--dk)}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:block}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:flex;flex-direction:column}
 .rel-card:hover{border-color:rgba(201,169,110,.5);transform:translateY(-3px)}
 .rel-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .rel-title{font-size:14px;font-weight:600;color:var(--wh);line-height:1.4;margin-bottom:8px}
-.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65}
+.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.rel-tg{border-color:rgba(41,168,224,.35);position:relative;display:flex;flex-direction:column}
+.rel-tg:hover{border-color:rgba(41,168,224,.6)}
+.rel-tg .rel-tag{color:var(--tg)}
+.rel-tg .rel-desc{flex:1}
+.rel-tg-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--tg);border:1px solid var(--tg);border-radius:4px;transition:all .2s}
+.rel-tg:hover .rel-tg-btn{background:var(--tg);color:#fff}
+.rel-btn{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.04em}
 .art-cta-section{padding:80px 0;background:var(--bk);text-align:center}
 .art-cta-section h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
 .art-cta-section p{font-size:16px;font-weight:300;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75}
@@ -170,7 +177,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
   nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}
   .art-layout{grid-template-columns:1fr}
   .art-sidebar{display:none}
-  .related-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
   .num-grid{grid-template-columns:1fr}
 }
 </style>
@@ -360,24 +367,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 <section class="art-related">
   <div class="con">
     <div class="lbl">Читайте также</div>
-    <div class="related-grid">
-      <a href="kak-prodat-biznes-bystro.html" class="rel-card">
-        <span class="rel-tag">Продажа бизнеса</span>
-        <div class="rel-title">Как продать бизнес быстро: пошаговое руководство для владельца</div>
-        <p class="rel-desc">5 способов найти покупателя и главные ошибки, которые срывают сделку.</p>
-      </a>
-      <a href="kak-kupit-gotovyj-biznes.html" class="rel-card">
-        <span class="rel-tag">Покупка бизнеса</span>
-        <div class="rel-title">Как купить готовый бизнес и не остаться в дураках</div>
-        <p class="rel-desc">9 рисков при покупке и как их проверить до подписания договора.</p>
-      </a>
-      <a href="chastnye-investicii-v-realnyj-sektor.html" class="rel-card">
-        <span class="rel-tag">Инвестиции</span>
-        <div class="rel-title">Частные инвестиции в реальный сектор: стоит ли и зачем</div>
-        <p class="rel-desc">Доходность 30–200% годовых реальна — но не для всех. Честный разбор инструмента.</p>
-      </a>
-    </div>
-  </div>
+    <div class="related-grid"></div>
 </section>
 <div class="sep"></div>
 
@@ -392,6 +382,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 </section>
 
 <script src="../nav.js"></script>
+<script src="../related.js"></script>
 <script src="../footer.js"></script>
 <script>
 (function(){

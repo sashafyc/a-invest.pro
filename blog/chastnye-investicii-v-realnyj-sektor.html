@@ -21,33 +21,74 @@
 <meta property="article:published_time" content="2026-03-09T10:00:00+03:00">
 <meta property="article:section" content="Инвестиции">
 
-<!-- Schema.org: Article -->
+<!-- Schema.org: Article + FAQPage -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "Частные инвестиции в реальный сектор экономики: стоит ли и зачем",
-  "description": "Как инвестировать в малый бизнес, оценивать проекты и не потерять деньги. 10 критериев выбора, источники сделок и честный взгляд на риски.",
-  "image": "https://a-invest.pro/Resources/photo.jpeg",
-  "datePublished": "2026-03-09",
-  "dateModified": "2026-03-09",
-  "author": {
-    "@type": "Person",
-    "name": "Александр Неделюк",
-    "url": "https://a-invest.pro/about.html",
-    "jobTitle": "Основатель A-Invest, бизнес-брокер"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "A-Invest",
-    "logo": {"@type": "ImageObject", "url": "https://a-invest.pro/Resources/logo.png"}
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://a-invest.pro/blog/chastnye-investicii-v-realnyj-sektor.html"
-  },
-  "wordCount": 1600,
-  "inLanguage": "ru"
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "Частные инвестиции в реальный сектор экономики: стоит ли и зачем",
+      "description": "Как инвестировать в малый бизнес, оценивать проекты и не потерять деньги. 10 критериев выбора, источники сделок и честный взгляд на риски.",
+      "image": "https://a-invest.pro/Resources/photo.jpeg",
+      "datePublished": "2026-03-09",
+      "dateModified": "2026-03-09",
+      "author": {
+        "@type": "Person",
+        "name": "Александр Неделюк",
+        "url": "https://a-invest.pro/about.html",
+        "jobTitle": "Основатель A-Invest, бизнес-брокер"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "A-Invest",
+        "logo": {"@type": "ImageObject", "url": "https://a-invest.pro/Resources/logo.png"}
+      },
+      "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://a-invest.pro/blog/chastnye-investicii-v-realnyj-sektor.html"
+      },
+      "wordCount": 1600,
+      "inLanguage": "ru"
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Какая минимальная сумма для инвестиций в малый бизнес?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Единого порога нет — зависит от проекта. На практике входной билет начинается от 500 тыс. — 1 млн рублей. Первые инвестиции лучше делать небольшими, воспринимая их как плату за обучение."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как оценить надёжность проекта перед вложением?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Начните с оценки собственника и команды, затем смотрите текущие финансовые результаты и конкретику использования средств. Идеи без цифр и прозрачной финансовой модели лучше не рассматривать."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какая доходность у частных инвестиций в реальный сектор?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Успешные проекты приносят от 30 до 200% годовых, но часть инвестиций неизбежно будет убыточной. Важен портфельный подход: доходность удачных вложений должна перекрывать потери от неудачных."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Где найти проекты для частных инвестиций?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Три основных источника: личное окружение, открытые площадки (Авито, Beboss, инвестиционные платформы) и входящий поток по рекомендациям, когда вы уже известны как инвестор. Самый качественный — третий, но до него нужно дорасти."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 
@@ -157,20 +198,32 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none}
 .sdb-tg:hover{opacity:.8}
 .art-related{padding:60px 0 80px;background:var(--dk)}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:block}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:flex;flex-direction:column}
 .rel-card:hover{border-color:rgba(201,169,110,.5);transform:translateY(-3px)}
 .rel-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .rel-title{font-size:14px;font-weight:600;color:var(--wh);line-height:1.4;margin-bottom:8px}
-.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65}
+.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.rel-tg{border-color:rgba(41,168,224,.35);position:relative;display:flex;flex-direction:column}
+.rel-tg:hover{border-color:rgba(41,168,224,.6)}
+.rel-tg .rel-tag{color:var(--tg)}
+.rel-tg .rel-desc{flex:1}
+.rel-tg-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--tg);border:1px solid var(--tg);border-radius:4px;transition:all .2s}
+.rel-tg:hover .rel-tg-btn{background:var(--tg);color:#fff}
+.rel-btn{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.04em}
 .art-cta-section{padding:80px 0;background:var(--bk);text-align:center}
 .art-cta-section h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
 .art-cta-section p{font-size:16px;font-weight:300;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75}
+.faq-list{margin:0;padding:0;list-style:none}
+.faq-item{border-bottom:1px solid var(--br);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:16px;font-weight:600;color:var(--wh);margin-bottom:10px;line-height:1.35}
+.faq-a{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
 @media(max-width:900px){
   nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}
   .art-layout{grid-template-columns:1fr}
   .art-sidebar{display:none}
-  .related-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
   .num-grid{grid-template-columns:1fr}
 }
 </style>
@@ -308,7 +361,36 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
         <hr>
 
-        <p>Если хотите обсудить конкретный проект или задать вопрос — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener" style="color:var(--gold)">@sashafyc</a>. Отвечаю лично.</p>
+        <h2 id="faq">Частые вопросы</h2>
+        <ul class="faq-list">
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Какая минимальная сумма для инвестиций в малый бизнес?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Единого порога нет — зависит от проекта. На практике входной билет начинается от 500 тыс. — 1 млн рублей. Первые инвестиции лучше делать небольшими, воспринимая их как плату за обучение.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Как оценить надёжность проекта перед вложением?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Начните с оценки собственника и команды, затем смотрите текущие финансовые результаты и конкретику использования средств. Идеи без цифр и прозрачной финансовой модели лучше не рассматривать.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Какая доходность у частных инвестиций в реальный сектор?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Успешные проекты приносят от 30 до 200% годовых, но часть инвестиций неизбежно будет убыточной. Важен портфельный подход: доходность удачных вложений должна перекрывать потери от неудачных.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Где найти проекты для частных инвестиций?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Три основных источника: личное окружение, открытые площадки (Авито, Beboss, инвестиционные платформы) и входящий поток по рекомендациям, когда вы уже известны как инвестор. Самый качественный — третий, но до него нужно дорасти.</p>
+            </div>
+          </li>
+        </ul>
+
+        <hr>
+        <p>Остались вопросы — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener">@sashafyc</a>. Отвечаю лично.</p>
 
       </article>
 
@@ -324,6 +406,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
               <li><a href="#kriterii">10 критериев оценки</a></li>
               <li><a href="#riski">Честно о рисках</a></li>
               <li><a href="#vyvod">Стоит ли инвестировать</a></li>
+              <li><a href="#faq">Частые вопросы</a></li>
             </ol>
           </div>
           <div class="sdb-cta">
@@ -357,24 +440,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 <section class="art-related">
   <div class="con">
     <div class="lbl">Читайте также</div>
-    <div class="related-grid">
-      <a href="kak-kupit-gotovyj-biznes.html" class="rel-card">
-        <span class="rel-tag">Покупка бизнеса</span>
-        <div class="rel-title">Как купить готовый бизнес и не остаться в дураках</div>
-        <p class="rel-desc">9 рисков при покупке бизнеса и как их проверить до сделки.</p>
-      </a>
-      <a href="kak-ya-ne-prodal-biznes-za-27-mln.html" class="rel-card">
-        <span class="rel-tag">Кейс</span>
-        <div class="rel-title">Как я не продал бизнес за 27 млн: история сорванной сделки</div>
-        <p class="rel-desc">63 дня переговоров — и сделка рухнула. Разбор ошибок и уроки для брокеров и продавцов.</p>
-      </a>
-      <a href="kak-prodat-biznes-bystro.html" class="rel-card">
-        <span class="rel-tag">Продажа бизнеса</span>
-        <div class="rel-title">Как продать бизнес быстро: пошаговое руководство для владельца</div>
-        <p class="rel-desc">5 способов найти покупателя и ошибки, которые срывают сделку.</p>
-      </a>
-    </div>
-  </div>
+    <div class="related-grid"></div>
 </section>
 <div class="sep"></div>
 
@@ -389,6 +455,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 </section>
 
 <script src="../nav.js"></script>
+<script src="../related.js"></script>
 <script src="../footer.js"></script>
 <script>
 (function(){

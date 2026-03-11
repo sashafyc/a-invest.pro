@@ -204,20 +204,32 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .sdb-tg{display:flex;align-items:center;gap:8px;color:var(--tg);font-size:12px;font-weight:600;text-decoration:none}
 .sdb-tg:hover{opacity:.8}
 .art-related{padding:60px 0 80px;background:var(--dk)}
-.related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
-.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:block}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:32px}
+.rel-card{border:1px solid var(--br);padding:24px;text-decoration:none;transition:border-color .25s,transform .25s;display:flex;flex-direction:column}
 .rel-card:hover{border-color:rgba(201,169,110,.5);transform:translateY(-3px)}
 .rel-tag{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:8px}
 .rel-title{font-size:14px;font-weight:600;color:var(--wh);line-height:1.4;margin-bottom:8px}
-.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65}
+.rel-desc{font-size:12px;font-weight:300;color:var(--dim);line-height:1.65;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;flex:1}
+.rel-tg{border-color:rgba(41,168,224,.35);position:relative;display:flex;flex-direction:column}
+.rel-tg:hover{border-color:rgba(41,168,224,.6)}
+.rel-tg .rel-tag{color:var(--tg)}
+.rel-tg .rel-desc{flex:1}
+.rel-tg-btn{display:inline-flex;align-items:center;gap:6px;margin-top:14px;padding:8px 18px;font-size:12px;font-weight:600;color:var(--tg);border:1px solid var(--tg);border-radius:4px;transition:all .2s}
+.rel-tg:hover .rel-tg-btn{background:var(--tg);color:#fff}
+.rel-btn{display:inline-block;margin-top:14px;font-size:11px;font-weight:600;color:var(--gold);letter-spacing:.04em}
 .art-cta-section{padding:80px 0;background:var(--bk);text-align:center}
 .art-cta-section h2{font-size:clamp(24px,3vw,40px);font-weight:700;line-height:1.2;letter-spacing:-.02em;color:var(--wh);margin-bottom:14px;max-width:600px;margin-left:auto;margin-right:auto}
 .art-cta-section p{font-size:16px;font-weight:300;color:var(--dim);max-width:480px;margin:0 auto 32px;line-height:1.75}
+/* FAQ block */
+.faq-list{margin:0;padding:0;list-style:none}
+.faq-item{border-bottom:1px solid var(--br);padding:18px 0}
+.faq-q{font-size:15px;font-weight:600;color:var(--wh);line-height:1.4;margin:0 0 8px}
+.faq-a{font-size:14px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
 @media(max-width:900px){
   nav{padding:14px 20px}.nav-links{display:none}.con{padding:0 20px}
   .art-layout{grid-template-columns:1fr}
   .art-sidebar{display:none}
-  .related-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:repeat(2,1fr)}
   .num-grid{grid-template-columns:1fr}
   .compare-grid{grid-template-columns:1fr}
 }
@@ -393,6 +405,28 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
         <p>Если остались вопросы — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener" style="color:var(--gold)">@sashafyc</a>. Отвечаю лично.</p>
 
+        <h2 id="faq">Частые вопросы</h2>
+        <ul class="faq-list" itemscope itemtype="https://schema.org/FAQPage">
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Как быстро продать готовый бизнес?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Самый быстрый способ продать бизнес — B2B-аутрич: определить стратегических покупателей, найти их ЛПР и выйти напрямую с инвестиционным предложением. Это сокращает срок продажи с 6–18 месяцев до 1–4 месяцев.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Где найти покупателя на бизнес?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Покупателей ищут через B2B-аутрич к стратегическим покупателям (самый эффективный способ для сделок от 10 млн), брокерские площадки (Авито, Beboss), сети контактов и через профессионального бизнес-брокера.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Сколько времени занимает продажа бизнеса?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">При использовании B2B-аутрича — от 1 до 6 месяцев для активов 5–100 млн. Через брокерские площадки — от 3 до 18+ месяцев. Скорость зависит от ликвидности актива и правильного определения целевых покупателей.</p>
+            </div>
+          </li>
+        </ul>
+
       </article>
 
       <!-- Sidebar -->
@@ -440,24 +474,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 <section class="art-related">
   <div class="con">
     <div class="lbl">Читайте также</div>
-    <div class="related-grid">
-      <a href="otsenka-biznesa-pri-prodazhe.html" class="rel-card">
-        <span class="rel-tag">Оценка бизнеса</span>
-        <div class="rel-title">Как оценить бизнес перед продажей: методы и мультипликаторы</div>
-        <p class="rel-desc">Почему оценка «от балды» срывает сделку и как считать правильно.</p>
-      </a>
-      <a href="b2b-autrich-dlya-prodazhi-biznesa.html" class="rel-card">
-        <span class="rel-tag">Стратегия</span>
-        <div class="rel-title">B2B-аутрич при продаже бизнеса: как находить покупателей напрямую</div>
-        <p class="rel-desc">Детальный разбор метода точечного поиска стратегических покупателей.</p>
-      </a>
-      <a href="prodazha-it-biznesa.html" class="rel-card">
-        <span class="rel-tag">IT-активы</span>
-        <div class="rel-title">Как продать IT-бизнес и SaaS: специфика и покупатели</div>
-        <p class="rel-desc">Кто покупает IT-компании и как упаковать технологический актив для сделки.</p>
-      </a>
-    </div>
-  </div>
+    <div class="related-grid"></div>
 </section>
 <div class="sep"></div>
 
@@ -472,6 +489,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 </section>
 
 <script src="../nav.js"></script>
+<script src="../related.js"></script>
 <script src="../footer.js"></script>
 <script>
 // Active TOC highlight

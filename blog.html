@@ -42,6 +42,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 .blog-hero{padding:120px 0 60px;background:var(--dk)}
 .blog-hero h1{font-size:clamp(32px,4vw,54px);font-weight:700;line-height:1.1;letter-spacing:-.025em;color:var(--wh);margin-bottom:14px}
 .blog-hero p{font-size:17px;font-weight:300;color:var(--dim);max-width:560px;line-height:1.75}
+.blog-filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.blog-filter{background:none;border:1px solid var(--br);color:var(--dim);font-family:var(--f);font-size:12px;font-weight:500;padding:7px 16px;cursor:pointer;transition:all .2s;letter-spacing:.02em}
+.blog-filter:hover{border-color:rgba(201,169,110,.5);color:var(--wh)}
+.blog-filter.active{border-color:var(--gold);color:var(--gold);background:rgba(201,169,110,.08)}
 .blog-body{padding:60px 0 80px;background:var(--bk)}
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 .blog-card{border:1px solid var(--br);background:var(--dk);text-decoration:none;display:flex;flex-direction:column;transition:border-color .25s,transform .25s;position:relative;overflow:hidden}
@@ -99,9 +103,18 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 
 <section class="blog-body">
   <div class="con">
+    <div class="blog-filters">
+      <button class="blog-filter active" data-filter="all">Все</button>
+      <button class="blog-filter" data-filter="Продажа бизнеса">Продажа бизнеса</button>
+      <button class="blog-filter" data-filter="Оценка бизнеса">Оценка бизнеса</button>
+      <button class="blog-filter" data-filter="Покупка бизнеса">Покупка бизнеса</button>
+      <button class="blog-filter" data-filter="Кейс">Кейсы</button>
+      <button class="blog-filter" data-filter="Стратегия">Стратегия</button>
+      <button class="blog-filter" data-filter="Инвестиции">Инвестиции</button>
+    </div>
     <div class="blog-grid">
 
-      <a href="blog/kak-prodat-biznes-bystro.html" class="blog-card blog-featured">
+      <a href="blog/kak-prodat-biznes-bystro.html" class="blog-card blog-featured" data-tag="Продажа бизнеса">
         <div class="bf-image">
           <img src="Resources/photo.jpeg" alt="Александр Неделюк — продажа бизнеса">
           <div class="bf-image-overlay"></div>
@@ -115,7 +128,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         </div>
       </a>
 
-      <a href="blog/kak-kupit-gotovyj-biznes.html" class="blog-card">
+      <a href="blog/kak-kupit-gotovyj-biznes.html" class="blog-card" data-tag="Покупка бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Покупка бизнеса</span>
           <div class="bc-title">Как купить готовый бизнес и не остаться в дураках</div>
@@ -124,7 +137,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">1 марта 2024 · 9 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/kassovyj-razryv-kak-zakryt-za-3-dnya.html" class="blog-card">
+      <a href="blog/kassovyj-razryv-kak-zakryt-za-3-dnya.html" class="blog-card" data-tag="Кейс">
         <div class="bc-body">
           <span class="bc-tag">Кейс</span>
           <div class="bc-title">Кассовый разрыв 700 тысяч: как закрыть за 3 дня без рекламного бюджета</div>
@@ -133,7 +146,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">1 мая 2024 · 7 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/strategiya-rosta-biznesa.html" class="blog-card">
+      <a href="blog/strategiya-rosta-biznesa.html" class="blog-card" data-tag="Стратегия">
         <div class="bc-body">
           <span class="bc-tag">Стратегия</span>
           <div class="bc-title">Стратегическое планирование: почему бизнес не растёт так быстро, как вы думали</div>
@@ -142,7 +155,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">1 июля 2024 · 8 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/kak-masshtabirovat-biznes.html" class="blog-card">
+      <a href="blog/kak-masshtabirovat-biznes.html" class="blog-card" data-tag="Стратегия">
         <div class="bc-body">
           <span class="bc-tag">Масштабирование</span>
           <div class="bc-title">Как найти новых клиентов: рост бизнеса с 300 тысяч до 10 млн в месяц</div>
@@ -151,7 +164,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">1 сентября 2024 · 7 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/chastnye-investicii-v-realnyj-sektor.html" class="blog-card">
+      <a href="blog/chastnye-investicii-v-realnyj-sektor.html" class="blog-card" data-tag="Инвестиции">
         <div class="bc-body">
           <span class="bc-tag">Инвестиции</span>
           <div class="bc-title">Частные инвестиции в реальный сектор: стоит ли и зачем</div>
@@ -160,7 +173,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">9 марта 2026 · 8 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/kak-ya-ne-prodal-biznes-za-27-mln.html" class="blog-card">
+      <a href="blog/kak-ya-ne-prodal-biznes-za-27-mln.html" class="blog-card" data-tag="Кейс">
         <div class="bc-body">
           <span class="bc-tag">Кейс</span>
           <div class="bc-title">Как я не продал бизнес за 27 млн: история сорванной сделки</div>
@@ -169,7 +182,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">9 марта 2026 · 7 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/prodazha-biznesa.html" class="blog-card">
+      <a href="blog/prodazha-biznesa.html" class="blog-card" data-tag="Продажа бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Продажа бизнеса</span>
           <div class="bc-title">Продажа бизнеса: полное руководство</div>
@@ -178,7 +191,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">9 марта 2026 · 11 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/kak-prodat-biznes.html" class="blog-card">
+      <a href="blog/kak-prodat-biznes.html" class="blog-card" data-tag="Продажа бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Продажа бизнеса</span>
           <div class="bc-title">Как продать бизнес: пошаговая инструкция</div>
@@ -187,7 +200,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">9 марта 2026 · 12 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/prodazha-gotovogo-biznesa.html" class="blog-card">
+      <a href="blog/prodazha-gotovogo-biznesa.html" class="blog-card" data-tag="Продажа бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Продажа бизнеса</span>
           <div class="bc-title">Продажа готового бизнеса: что важно знать покупателю и продавцу</div>
@@ -196,7 +209,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">10 марта 2026 · 9 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/ocenka-biznesa.html" class="blog-card">
+      <a href="blog/ocenka-biznesa.html" class="blog-card" data-tag="Оценка бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Оценка бизнеса</span>
           <div class="bc-title">Оценка бизнеса: методы, подходы и реальная стоимость</div>
@@ -205,7 +218,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">10 марта 2026 · 10 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/stoimost-biznesa.html" class="blog-card">
+      <a href="blog/stoimost-biznesa.html" class="blog-card" data-tag="Оценка бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Оценка бизнеса</span>
           <div class="bc-title">Сколько стоит бизнес: от чего зависит цена</div>
@@ -214,7 +227,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
         <div class="bc-footer"><span class="bc-date">10 марта 2026 · 9 мин</span><span class="bc-read">Читать →</span></div>
       </a>
 
-      <a href="blog/podgotovka-k-prodazhe.html" class="blog-card">
+      <a href="blog/podgotovka-k-prodazhe.html" class="blog-card" data-tag="Продажа бизнеса">
         <div class="bc-body">
           <span class="bc-tag">Продажа бизнеса</span>
           <div class="bc-title">Подготовка бизнеса к продаже: чеклист из 15 шагов</div>
@@ -252,6 +265,26 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
   </div>
 </section>
 
+<script>
+(function(){
+  var btns = document.querySelectorAll('.blog-filter');
+  var cards = document.querySelectorAll('.blog-card');
+  btns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      btns.forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function(c){
+        if(f === 'all' || c.getAttribute('data-tag') === f){
+          c.style.display = '';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    });
+  });
+})();
+</script>
 <script src="nav.js"></script>
 <script src="footer.js"></script>
 </body>
