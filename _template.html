@@ -16,17 +16,30 @@
 
   ШАГ 3 — КОНТЕНТ
   • 5–8 разделов H2 с id для якорей, каждый содержит ключевое слово
+  • H2 формулировать как вопросы где возможно: «Сколько стоит продать бизнес?», «Как оценить бизнес?»
+    Нейросети матчат запрос пользователя с заголовком 1 в 1
   • Первый H2 — ответ на главный вопрос, последний — «Итоги»
   • 1000–2500 слов, 2–3 внутренние ссылки на другие статьи
   • LEAD (вводный абзац): прямой ответ на вопрос заголовка, 2–3 предложения
+  • ANSWER-FIRST: каждый H2 начинается с прямого ответа (1–2 предложения), потом раскрытие.
+    Нейросети берут первый чёткий ответ под заголовком — если начать с «воды», пропустят.
   • Обязательно: 1–2 blockquote, 1–2 highlight-box, 1 num-grid
   • FAQ: 3–5 вопросов + полные ответы (2–4 предложения), совпадают с FAQPage schema
+    Вопросы = реальные запросы пользователей (длиннохвостовые), ответы — утвердительные, с цифрами
   • Нейрооптимизация: точные числа, утвердительный тон, без «возможно/наверное»
+  • Статистика: добавлять конкретные цифры и данные где уместно (сроки, %, суммы, кол-во).
+    Ссылаться на источники (Росстат, ФНС, собственные данные A-Invest).
+    НЕ в ущерб читаемости — цель: SEO-трафик → чтение → конверсия, а не справочник
   • Если статья пошаговая — добавить HowTo schema (см. блок в head). Если нет — удалить его.
 
   ШАГ 4 — ПЕРЕЛИНКОВКА (мин. 2–3 ссылки в тексте)
   Актуальный список статей: массив articles в js/related.js (slug + title)
   Формат ссылки: <a href="SLUG.html">текст анкора</a>
+
+  ШАГ 4.5 — ДАТА ОБНОВЛЕНИЯ
+  В конце статьи (перед «Остались вопросы») есть строка «Обновлено: ДД МЕСЯЦ ГГГГ».
+  При создании = дата публикации. Обновлять article:modified_time в head и dateModified в schema.
+  Также обновить llms.txt (добавить новую статью в список).
 
   ШАГ 5 — ПОСЛЕ НАПИСАНИЯ
   □ blog.html — добавить карточку с data-tag="КАТЕГОРИЯ" (пример ниже)
@@ -35,6 +48,7 @@
   □ Добавить ссылку на новую статью хотя бы в одну существующую статью
   □ Сохранить как: blog/SLUG.html
   □ _materials/content-guide.md — отметить статью ✅
+  □ llms.txt — добавить статью в список
 
   ВЕРИФИКАЦИЯ (обязательно!):
   □ Скрипты: blog-layout.js, nav.js, related.js, footer.js — все 4, именно в этом порядке
@@ -220,6 +234,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .faq-q{font-size:16px;font-weight:600;color:var(--wh);margin-bottom:10px;line-height:1.35}
 .faq-a{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
 .art-content hr{border:none;border-top:1px solid var(--br);margin:40px 0}
+.art-updated{font-size:13px;font-weight:400;color:rgba(245,243,238,.4);margin-bottom:12px}
 .sdb-sticky{position:sticky;top:100px;display:flex;flex-direction:column;gap:24px}
 .sdb-toc{background:var(--dk);border:1px solid var(--br);padding:24px}
 .sdb-toc-title{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;display:block}
@@ -380,6 +395,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
         </ul>
 
         <hr>
+        <p class="art-updated">Обновлено: <time datetime="YYYY-MM-DD">ДД МЕСЯЦ ГГГГ</time></p>
         <p>Остались вопросы — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener">@sashafyc</a>. Отвечаю лично.</p>
 
       </article>
