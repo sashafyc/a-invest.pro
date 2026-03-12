@@ -4,36 +4,49 @@
   var sticky = document.querySelector('.sdb-sticky');
   if(!layout || !sidebar || !sticky) return;
 
-  var hideAt = 0;
-  var showAt = 0;
+  var stickyEnd = 0;
   var expanded = false;
+  var transitioning = false;
 
-  function calcThreshold(){
-    var rect = sticky.getBoundingClientRect();
-    hideAt = window.scrollY + rect.top + rect.height + 200;
-    showAt = hideAt - 400; // Show earlier to prevent flicker
+  function measure(){
+    // Measure only when sidebar is visible (original layout)
+    if(!expanded){
+      var rect = sticky.getBoundingClientRect();
+      stickyEnd = window.scrollY + rect.top + rect.height;
+    }
   }
 
-  setTimeout(calcThreshold, 100);
+  setTimeout(measure, 100);
 
   function check(){
-    var scrollY = window.scrollY + 100;
-    if(!expanded && scrollY > hideAt && hideAt > 0){
+    if(transitioning) return;
+    var scrollY = window.scrollY + window.innerHeight;
+
+    if(!expanded && stickyEnd > 0 && window.scrollY > stickyEnd + 100){
+      // User scrolled past the sidebar content
       expanded = true;
+      transitioning = true;
       sidebar.style.transition = 'opacity .3s';
       sidebar.style.opacity = '0';
       setTimeout(function(){
         sidebar.style.display = 'none';
         layout.style.gridTemplateColumns = '1fr';
+        transitioning = false;
       }, 300);
-    } else if(expanded && scrollY <= showAt){
+    } else if(expanded && window.scrollY <= stickyEnd - 100){
+      // User scrolled back up to where sidebar should be
       expanded = false;
+      transitioning = true;
       layout.style.gridTemplateColumns = '';
       sidebar.style.display = '';
+      sidebar.style.opacity = '0';
       sidebar.offsetHeight;
       sidebar.style.transition = 'opacity .3s';
-      sidebar.style.opacity = '1';
-      setTimeout(function(){ sidebar.style.opacity = ''; }, 300);
+      sidebar.style.opacity = '';
+      setTimeout(function(){
+        transitioning = false;
+        measure(); // Re-measure after layout restored
+      }, 300);
     }
   }
 
