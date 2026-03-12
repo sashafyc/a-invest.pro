@@ -10,20 +10,24 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Force IPv4
-        run: sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /a-invest/public_html/
-          exclude: |
-            **/.git*
-            **/.git*/**
-            _materials/**
-            _distributions/**
-            _template.html
-            README.md
-            .gitignore
+      - name: Setup SSH key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -H ${{ secrets.FTP_SERVER }} >> ~/.ssh/known_hosts 2>/dev/null
+      - name: Deploy via SFTP
+        run: |
+          lftp -e "
+            set sftp:connect-program 'ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_ed25519';
+            open sftp://${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }};
+            mirror --reverse --delete --verbose \
+              --exclude ^\.git/ \
+              --exclude ^_materials/ \
+              --exclude ^_distributions/ \
+              --exclude ^_template\.html$ \
+              --exclude ^README\.md$ \
+              --exclude ^\.gitignore$ \
+              . /a-invest/public_html/;
+            quit
+          "
