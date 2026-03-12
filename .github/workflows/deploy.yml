@@ -7,7 +7,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -26,5 +26,6 @@ jobs:
             --exclude='_template.html' \
             --exclude='README.md' \
             --exclude='.gitignore' \
+            --exclude='deploy.sh' \
             -e "ssh -i ~/.ssh/id_ed25519 -o ConnectTimeout=30" \
-            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/a-invest/public_html/
+            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/home/c/${{ secrets.FTP_USERNAME }}/a-invest/public_html/
