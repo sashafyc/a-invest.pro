@@ -7,24 +7,24 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Force IPv4
-        run: sudo sysctl -w net.ipv6.conf.all.disable_ipv6=1
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
-        with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /a-invest/public_html/
-          timeout: 60000
-          exclude: |
-            **/.git*
-            **/.git*/**
-            _materials/**
-            _distributions/**
-            _template.html
-            README.md
-            .gitignore
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          echo "StrictHostKeyChecking no" > ~/.ssh/config
+      - name: Deploy via rsync
+        run: |
+          rsync -avz --delete \
+            --exclude='.git/' \
+            --exclude='_materials/' \
+            --exclude='_distributions/' \
+            --exclude='_template.html' \
+            --exclude='README.md' \
+            --exclude='.gitignore' \
+            -e "ssh -i ~/.ssh/id_ed25519 -o ConnectTimeout=30" \
+            ./ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:/a-invest/public_html/
