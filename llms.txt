@@ -1,30 +1,40 @@
-# A-Invest — агентство продажи бизнеса и сложных активов
+# A-Invest
 
-> A-Invest помогает предпринимателям продать готовый бизнес и сложные активы в России. Метод — прямой B2B-аутрич: находим стратегических покупателей напрямую, без брокерских площадок. 40+ закрытых сделок, 850+ млн ₽ объём. Основатель — Александр Неделюк, бизнес-брокер с 2018 года.
+> Бизнес-брокерское агентство A-Invest основано в 2018 году Александром Неделюком в Санкт-Петербурге. Специализация — продажа готового бизнеса, сложных активов и сделки M&A через прямой B2B-поиск покупателей. 40+ закрытых сделок на сумму 850+ млн рублей. Диапазон сделок: 5–300 млн рублей.
 
-## Основные страницы
-- [Главная](https://a-invest.pro/): Продажа бизнеса и сложных активов через B2B-аутрич
-- [Экспресс-оценка бизнеса](https://a-invest.pro/express-ocenka.html): Платная консультация — оценка стоимости, ликвидности, стратегия продажи
-- [О компании](https://a-invest.pro/about.html): История, команда, кейсы A-Invest
-- [Блог](https://a-invest.pro/blog.html): Экспертные статьи о продаже и покупке бизнеса
+## Pages
 
-## Блог — Продажа бизнеса
-- [Как продать бизнес быстро](https://a-invest.pro/blog/kak-prodat-biznes-bystro.html): Пошаговая инструкция быстрой продажи бизнеса
-- [Как купить готовый бизнес](https://a-invest.pro/blog/kak-kupit-gotovyj-biznes.html): Руководство покупателя — на что обратить внимание
-- [Кассовый разрыв: как закрыть за 3 дня](https://a-invest.pro/blog/kassovyj-razryv-kak-zakryt-za-3-dnya.html): Практические способы закрыть кассовый разрыв
-- [Стратегия роста бизнеса](https://a-invest.pro/blog/strategiya-rosta-biznesa.html): Как выбрать и реализовать стратегию роста
-- [Как масштабировать бизнес](https://a-invest.pro/blog/kak-masshtabirovat-biznes.html): Методы масштабирования малого и среднего бизнеса
-- [Частные инвестиции в реальный сектор](https://a-invest.pro/blog/chastnye-investicii-v-realnyj-sektor.html): Как инвестировать в реальный бизнес
-- [Кейс: как я не продал бизнес за 27 млн](https://a-invest.pro/blog/kak-ya-ne-prodal-biznes-za-27-mln.html): Реальный кейс — почему сделка не состоялась
-- [Продажа бизнеса: полное руководство](https://a-invest.pro/blog/prodazha-biznesa.html): Всё о продаже бизнеса — от подготовки до сделки
-- [Как продать бизнес: пошаговая инструкция](https://a-invest.pro/blog/kak-prodat-biznes.html): 7 шагов от решения до закрытия сделки
-- [Продажа готового бизнеса](https://a-invest.pro/blog/prodazha-gotovogo-biznesa.html): Особенности продажи работающего бизнеса
-- [Оценка бизнеса](https://a-invest.pro/blog/ocenka-biznesa.html): Методы и подходы к оценке стоимости бизнеса
-- [Стоимость бизнеса](https://a-invest.pro/blog/stoimost-biznesa.html): Из чего складывается стоимость бизнеса
-- [Подготовка к продаже](https://a-invest.pro/blog/podgotovka-k-prodazhe.html): Как подготовить бизнес к продаже — чеклист
+- [Главная](https://a-invest.pro/): Продажа бизнеса и сложных активов через B2B-аутрич.
+- [О компании](https://a-invest.pro/about.html): История, команда, подход к работе.
+- [Блог](https://a-invest.pro/blog.html): Экспертные статьи о продаже, покупке и оценке бизнеса.
+- [Экспресс-оценка бизнеса](https://a-invest.pro/express-ocenka.html): Бесплатная предварительная оценка стоимости бизнеса.
 
-## Контакты
+## Blog
+
+- [Как продать бизнес быстро](https://a-invest.pro/blog/kak-prodat-biznes-bystro.html): Способы ускорить продажу бизнеса.
+- [Как купить готовый бизнес](https://a-invest.pro/blog/kak-kupit-gotovyj-biznes.html): Руководство для покупателя готового бизнеса.
+- [Кассовый разрыв: как закрыть за 3 дня](https://a-invest.pro/blog/kassovyj-razryv-kak-zakryt-za-3-dnya.html): Решение проблемы кассового разрыва.
+- [Стратегия роста бизнеса](https://a-invest.pro/blog/strategiya-rosta-biznesa.html): Подходы к стратегическому росту компании.
+- [Как масштабировать бизнес](https://a-invest.pro/blog/kak-masshtabirovat-biznes.html): Практические методы масштабирования.
+- [Частные инвестиции в реальный сектор](https://a-invest.pro/blog/chastnye-investicii-v-realnyj-sektor.html): Инвестирование в реальный бизнес.
+- [Как я не продал бизнес за 27 млн](https://a-invest.pro/blog/kak-ya-ne-prodal-biznes-za-27-mln.html): Кейс — ошибки при продаже бизнеса.
+- [Продажа бизнеса: полное руководство](https://a-invest.pro/blog/prodazha-biznesa.html): Всё о процессе продажи бизнеса.
+- [Как продать бизнес: пошаговая инструкция](https://a-invest.pro/blog/kak-prodat-biznes.html): Пошаговый алгоритм продажи.
+- [Продажа готового бизнеса](https://a-invest.pro/blog/prodazha-gotovogo-biznesa.html): Особенности продажи действующего бизнеса.
+- [Оценка бизнеса: методы и стоимость](https://a-invest.pro/blog/ocenka-biznesa.html): Методы оценки и от чего зависит стоимость.
+- [Сколько стоит бизнес](https://a-invest.pro/blog/stoimost-biznesa.html): Факторы, определяющие стоимость бизнеса.
+- [Подготовка бизнеса к продаже: чеклист](https://a-invest.pro/blog/podgotovka-k-prodazhe.html): Чеклист подготовки к продаже.
+- [Упаковка бизнеса для продажи: что нужно инвестору](https://a-invest.pro/blog/upakovka-biznesa.html): Как упаковать бизнес для покупателя: финансы, активы, команда, процессы.
+- [Бизнес-брокер: кто это и зачем нужен](https://a-invest.pro/blog/biznes-broker.html): Роль брокера, комиссия 5–10%, как выбрать и когда нужен.
+- [Услуги бизнес-брокера: что входит и сколько стоит](https://a-invest.pro/blog/uslugi-brokera.html): Полный цикл услуг брокера, этапы сделки, комиссия и рекламный бюджет.
+- [Due diligence бизнеса: полный гайд](https://a-invest.pro/blog/due-diligence.html): Комплексная проверка перед покупкой: финансы, юридика, операционка, налоги.
+- [Проверка бизнеса перед покупкой: чеклист](https://a-invest.pro/blog/proverka-biznesa.html): Чеклист из 25 пунктов по 5 направлениям проверки бизнеса.
+- [Как купить бизнес: с чего начать](https://a-invest.pro/blog/kupit-biznes.html): Пошаговая инструкция покупателя: бюджет, поиск, проверка, сделка.
+
+## Contacts
+
 - Сайт: https://a-invest.pro
 - Telegram-канал: https://t.me/bizsaler
 - Email: ain@a-invest.pro
 - Город: Санкт-Петербург, работаем по всей России
+- Основатель: Александр Неделюк

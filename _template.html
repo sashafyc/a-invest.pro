@@ -39,7 +39,7 @@
   ШАГ 4.5 — ДАТА ОБНОВЛЕНИЯ
   В конце статьи (перед «Остались вопросы») есть строка «Обновлено: ДД МЕСЯЦ ГГГГ».
   При создании = дата публикации. Обновлять article:modified_time в head и dateModified в schema.
-  Также обновить llms.txt (добавить новую статью в список).
+  Также обновить llms.txt и llms-full.txt (добавить новую статью).
 
   ШАГ 5 — ПОСЛЕ НАПИСАНИЯ
   □ blog.html — добавить карточку с data-tag="КАТЕГОРИЯ" (пример ниже)
@@ -49,6 +49,7 @@
   □ Сохранить как: blog/SLUG.html
   □ _materials/content-guide.md — отметить статью ✅
   □ llms.txt — добавить статью в список
+  □ llms-full.txt — добавить блок с URL и 2-3 предложения о содержании (с конкретикой: цифры, кейсы)
 
   ВЕРИФИКАЦИЯ (обязательно!):
   □ Скрипты: blog-layout.js, nav.js, related.js, footer.js — все 4, именно в этом порядке
@@ -75,6 +76,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
 <title>ЗАГОЛОВОК СТАТЬИ — A-Invest | Продажа бизнеса</title>
 <meta name="description" content="ОПИСАНИЕ СТАТЬИ 150-160 СИМВОЛОВ.">
 <meta name="keywords" content="KEYWORDS">
@@ -184,6 +186,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 .lbl::before{content:'';width:18px;height:1px;background:var(--gold)}
 .btn-g{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--bk);font-family:var(--f);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:16px 30px;border:none;cursor:pointer;text-decoration:none;transition:all .22s}
 .btn-g:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,169,110,.22)}
+.inline-cta{background:var(--dk2);border:1px solid var(--br);padding:24px 32px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta p{font-size:16px;font-weight:500;color:var(--wh);margin:0}
+.inline-cta .btn-g{padding:12px 24px;font-size:12px;white-space:nowrap;color:var(--bk)}
 .art-hero{padding:120px 0 60px;background:var(--dk)}
 .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(245,243,238,.4);margin-bottom:24px;flex-wrap:wrap}
 .breadcrumbs a{color:rgba(201,169,110,.6);text-decoration:none;transition:color .2s}
@@ -300,11 +305,11 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
 <section class="art-hero">
   <div class="con">
-    <nav class="breadcrumbs" aria-label="Навигация">
+    <div class="breadcrumbs" aria-label="Навигация">
       <a href="../index.html">Главная</a><span>/</span>
       <a href="../blog.html">Блог</a><span>/</span>
       <span>КОРОТКОЕ НАЗВАНИЕ</span>
-    </nav>
+    </div>
     <div class="art-meta">
       <span class="art-tag">КАТЕГОРИЯ</span>
       <time class="art-date" datetime="YYYY-MM-DD">ДД МЕСЯЦ ГГГГ</time>
@@ -329,7 +334,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
       <article class="art-content">
 
-        <h2 id="section-1">Раздел 1</h2>
+        <h2 id="section-1">Вопрос-заголовок раздела 1?</h2>
+        <p><strong>Answer-first: прямой ответ на вопрос H2 — 1–2 предложения.</strong></p>
         <p>Текст раздела.</p>
 
         <blockquote>
@@ -337,7 +343,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           <cite>Александр Неделюк, основатель A-Invest</cite>
         </blockquote>
 
-        <h2 id="section-2">Раздел 2</h2>
+        <h2 id="section-2">Вопрос-заголовок раздела 2?</h2>
+        <p><strong>Answer-first: прямой ответ — 1–2 предложения.</strong></p>
         <p>Текст раздела.</p>
         <ul>
           <li>Пункт 1</li>
@@ -346,21 +353,29 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
         </ul>
 
         <!-- steps-list — для пошаговых разделов -->
-        <h2 id="section-3">Раздел 3</h2>
+        <div class="inline-cta">
+          <p>Хотите узнать реальную стоимость вашего бизнеса?</p>
+          <a href="../express-ocenka.html" class="btn-g" onclick="if(typeof ym!=='undefined')ym(85646347,'reachGoal','blog_inline_cta')">Экспресс-оценка <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <h2 id="section-3">Вопрос-заголовок раздела 3?</h2>
+        <p><strong>Answer-first: прямой ответ — 1–2 предложения.</strong></p>
         <ol class="steps-list">
           <li><strong>Шаг</strong> Описание.</li>
           <li><strong>Шаг</strong> Описание.</li>
           <li><strong>Шаг</strong> Описание.</li>
         </ol>
 
-        <h2 id="section-4">Раздел 4</h2>
+        <h2 id="section-4">Вопрос-заголовок раздела 4?</h2>
+        <p><strong>Answer-first: прямой ответ — 1–2 предложения.</strong></p>
         <p>Текст раздела.</p>
         <div class="highlight-box">
           <span class="hb-label">Важно знать</span>
           <p>Ключевой тезис или предупреждение.</p>
         </div>
 
-        <h2 id="section-5">Раздел 5</h2>
+        <h2 id="section-5">Вопрос-заголовок раздела 5?</h2>
+        <p><strong>Answer-first: прямой ответ — 1–2 предложения.</strong></p>
         <p>Текст раздела.</p>
         <div class="num-grid">
           <div class="num-cell"><span class="num-big">40+</span><span class="num-label">закрытых сделок</span></div>
@@ -397,7 +412,6 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
         <hr>
         <p class="art-updated">Обновлено: <time datetime="YYYY-MM-DD">ДД МЕСЯЦ ГГГГ</time></p>
-        <p>Остались вопросы — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener">@sashafyc</a>. Отвечаю лично.</p>
 
       </article>
 
@@ -407,11 +421,11 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           <div class="sdb-toc">
             <span class="sdb-toc-title">Содержание</span>
             <ol>
-              <li><a href="#section-1">Раздел 1</a></li>
-              <li><a href="#section-2">Раздел 2</a></li>
-              <li><a href="#section-3">Раздел 3</a></li>
-              <li><a href="#section-4">Раздел 4</a></li>
-              <li><a href="#section-5">Раздел 5</a></li>
+              <li><a href="#section-1">Вопрос раздела 1?</a></li>
+              <li><a href="#section-2">Вопрос раздела 2?</a></li>
+              <li><a href="#section-3">Вопрос раздела 3?</a></li>
+              <li><a href="#section-4">Вопрос раздела 4?</a></li>
+              <li><a href="#section-5">Вопрос раздела 5?</a></li>
               <li><a href="#itogi">Итоги</a></li>
               <li><a href="#faq">Частые вопросы</a></li>
             </ol>
@@ -424,7 +438,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           </div>
           <div class="sdb-author">
             <div class="sdb-author-inner">
-              <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="sdb-author-photo">
+              <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="sdb-author-photo" loading="lazy">
               <div>
                 <div class="sdb-author-name">Александр Неделюк</div>
                 <div class="sdb-author-role">Основатель A-Invest<br>Бизнес-брокер с 2018</div>

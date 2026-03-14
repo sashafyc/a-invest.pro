@@ -7,24 +7,43 @@
     {slug:'ocenka-biznesa.html', tag:'Оценка бизнеса', title:'Оценка бизнеса: методы и реальная стоимость', desc:'Три метода оценки с примерами из реальных сделок.'},
     {slug:'stoimost-biznesa.html', tag:'Оценка бизнеса', title:'Сколько стоит бизнес: от чего зависит цена', desc:'Почему два бизнеса с одинаковой прибылью стоят по-разному.'},
     {slug:'podgotovka-k-prodazhe.html', tag:'Подготовка к продаже', title:'Подготовка бизнеса к продаже: чеклист', desc:'15 шагов, которые добавляют 20–40% к цене бизнеса.'},
+    {slug:'upakovka-biznesa.html', tag:'Подготовка к продаже', title:'Упаковка бизнеса для продажи: что нужно инвестору', desc:'Что покупатель хочет увидеть: финансы, команда, процессы, активы. Примеры из реальных сделок.'},
     {slug:'kak-ya-ne-prodal-biznes-za-27-mln.html', tag:'Кейс', title:'Как я не продал бизнес за 27 млн', desc:'История сорванной сделки: 63 дня переговоров и 4 урока.'},
     {slug:'kassovyj-razryv-kak-zakryt-za-3-dnya.html', tag:'Кейс', title:'Кассовый разрыв: как закрыть за 3 дня', desc:'Кейс: онлайн-школа нашла 1,39 млн скрытых ресурсов внутри бизнеса.'},
     {slug:'kak-kupit-gotovyj-biznes.html', tag:'Покупка бизнеса', title:'Как купить готовый бизнес', desc:'Этапы, риски и что проверять при покупке бизнеса.'},
     {slug:'chastnye-investicii-v-realnyj-sektor.html', tag:'Инвестиции', title:'Частные инвестиции в реальный сектор', desc:'Стоит ли вкладывать в реальный бизнес и как это работает.'},
     {slug:'strategiya-rosta-biznesa.html', tag:'Стратегия', title:'Стратегическое планирование в бизнесе', desc:'Почему бизнес не растёт так быстро, как вы думали.'},
-    {slug:'kak-masshtabirovat-biznes.html', tag:'Стратегия', title:'Как масштабировать бизнес', desc:'Рост с 300 тысяч до 10 млн в месяц — система, а не везение.'}
+    {slug:'kak-masshtabirovat-biznes.html', tag:'Стратегия', title:'Как масштабировать бизнес', desc:'Рост с 300 тысяч до 10 млн в месяц — система, а не везение.'},
+    {slug:'biznes-broker.html', tag:'Бизнес-брокер', title:'Бизнес-брокер: кто это и зачем нужен', desc:'Как работает брокер, где ищет покупателей, сколько стоит и когда без него не обойтись.'},
+    {slug:'uslugi-brokera.html', tag:'Бизнес-брокер', title:'Услуги бизнес-брокера: что входит и сколько стоит', desc:'Полный цикл услуг: оценка, упаковка, поиск покупателей, переговоры, due diligence, закрытие.'},
+    {slug:'due-diligence.html', tag:'Due Diligence', title:'Due diligence бизнеса: полный гайд', desc:'Комплексная проверка перед покупкой: финансы, юридика, операционка, налоги. Чеклист из 40+ сделок.'},
+    {slug:'proverka-biznesa.html', tag:'Due Diligence', title:'Проверка бизнеса перед покупкой: чеклист', desc:'Чеклист из 25 пунктов по 5 направлениям: финансы, юридика, операционка, клиенты, команда.'},
+    {slug:'kupit-biznes.html', tag:'Покупка бизнеса', title:'Как купить бизнес: с чего начать', desc:'Пошаговая инструкция покупателя: бюджет, поиск, проверка, переговоры, оформление сделки.'}
   ];
 
   var current = location.pathname.split('/').pop();
+  var currentArticle = articles.find(function(a){ return a.slug === current; });
+  var currentTag = currentArticle ? currentArticle.tag : '';
   var pool = articles.filter(function(a){ return a.slug !== current; });
 
-  // Fisher-Yates shuffle
-  for(var i = pool.length - 1; i > 0; i--){
-    var j = Math.floor(Math.random() * (i + 1));
-    var t = pool[i]; pool[i] = pool[j]; pool[j] = t;
-  }
+  // Split into same-tag and other
+  var sameTag = pool.filter(function(a){ return a.tag === currentTag; });
+  var otherTag = pool.filter(function(a){ return a.tag !== currentTag; });
 
-  var pick = pool.slice(0, 3);
+  // Shuffle each group
+  function shuffle(arr){
+    for(var i = arr.length - 1; i > 0; i--){
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+  shuffle(sameTag);
+  shuffle(otherTag);
+
+  // Pick: prioritize same tag, fill rest from others
+  var pick = sameTag.concat(otherTag).slice(0, 3);
+
   var html = '';
   pick.forEach(function(a){
     html += '<a href="' + a.slug + '" class="rel-card" onclick="if(typeof ym!==\'undefined\')ym(85646347,\'reachGoal\',\'blog_related_click\')">' +

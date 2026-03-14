@@ -22,3 +22,8 @@ rsync -avz --delete \
   ./ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}"
 
 echo "✅ Деплой завершён"
+
+# IndexNow — уведомляем Bing и Яндекс о всех URL
+echo ""
+echo "📡 IndexNow: отправляем URL в Bing и Яндекс..."
+bash _materials/indexnow-submit.sh

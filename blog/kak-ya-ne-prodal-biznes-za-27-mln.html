@@ -31,7 +31,7 @@
   "description": "Кейс из практики бизнес-брокера: 63 дня переговоров по сделке на 27 млн рублей — и продавец отказался в последний момент. Разбор ошибок и уроки.",
   "image": "https://a-invest.pro/Resources/photo.jpeg",
   "datePublished": "2026-03-09",
-  "dateModified": "2026-03-09",
+  "dateModified": "2026-03-12",
   "author": {
     "@type": "Person",
     "name": "Александр Неделюк",
@@ -60,6 +60,48 @@
     {"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://a-invest.pro/"},
     {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://a-invest.pro/blog.html"},
     {"@type": "ListItem", "position": 3, "name": "Как я не продал бизнес за 27 млн", "item": "https://a-invest.pro/blog/kak-ya-ne-prodal-biznes-za-27-mln.html"}
+  ]
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Почему срываются сделки по продаже бизнеса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Основные причины срыва: изменение мотивации продавца (появились альтернативы, бизнес пошёл в рост), затянувшиеся переговоры, расхождение ожиданий по цене, проблемы на этапе due diligence и внешние факторы — изменение рыночных условий или личных обстоятельств сторон."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Как избежать срыва сделки при продаже бизнеса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Включите в агентский договор автопролонгацию на время активных переговоров. Обсудите с продавцом возможные причины отказа до начала работы. Установите жёсткие дедлайны на каждый этап. Регулярно проверяйте мотивацию продавца — раз в 2 недели уточняйте, не изменились ли обстоятельства."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Нужен ли бизнес-брокер для продажи бизнеса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Для объектов дороже 5 млн рублей — да. Брокер берёт на себя оценку, упаковку, поиск покупателей, переговоры и юридическое сопровождение. Это экономит продавцу 10–20 часов в неделю и увеличивает итоговую цену на 20–30% за счёт правильного позиционирования и выхода на стратегических покупателей."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Сколько времени занимает продажа бизнеса?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "В среднем продажа бизнеса занимает 3–6 месяцев. Сроки зависят от ниши, стоимости объекта, качества упаковки и каналов поиска покупателей. Объекты с прозрачной финансовой историей и оцифрованными процессами продаются быстрее — иногда за 1–2 месяца."
+      }
+    }
   ]
 }
 </script>
@@ -93,6 +135,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 60px;display:fl
 .lbl::before{content:'';width:18px;height:1px;background:var(--gold)}
 .btn-g{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--bk);font-family:var(--f);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:16px 30px;border:none;cursor:pointer;text-decoration:none;transition:all .22s}
 .btn-g:hover{background:var(--gold2);transform:translateY(-2px)}
+.inline-cta{background:var(--dk2);border:1px solid var(--br);padding:24px 32px;margin:32px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.inline-cta p{font-size:16px;font-weight:500;color:var(--wh);margin:0}
+.inline-cta .btn-g{padding:12px 24px;font-size:12px;white-space:nowrap;color:var(--bk)}
 .art-hero{padding:120px 0 60px;background:var(--dk)}
 .breadcrumbs{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(245,243,238,.4);margin-bottom:24px;flex-wrap:wrap}
 .breadcrumbs a{color:rgba(201,169,110,.6);text-decoration:none;transition:color .2s}
@@ -131,6 +176,11 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 .num-cell{background:var(--dk);padding:24px;text-align:center}
 .num-big{font-size:32px;font-weight:700;color:var(--gold);letter-spacing:-.03em;display:block;line-height:1}
 .num-label{font-size:12px;font-weight:300;color:var(--dim);display:block;margin-top:6px}
+.faq-list{margin:0;padding:0;list-style:none}
+.faq-item{border-bottom:1px solid var(--br);padding:20px 0}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:16px;font-weight:600;color:var(--wh);margin-bottom:10px;line-height:1.35}
+.faq-a{font-size:15px;font-weight:300;color:var(--dim);line-height:1.75;margin:0}
 .art-content hr{border:none;border-top:1px solid var(--br);margin:40px 0}
 .sdb-sticky{position:sticky;top:100px;display:flex;flex-direction:column;gap:24px}
 .sdb-toc{background:var(--dk);border:1px solid var(--br);padding:24px}
@@ -198,13 +248,13 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 <!-- HERO -->
 <section class="art-hero">
   <div class="con">
-    <nav class="breadcrumbs" aria-label="Навигация">
+    <div class="breadcrumbs" aria-label="Навигация">
       <a href="../index.html">Главная</a>
       <span>/</span>
       <a href="../blog.html">Блог</a>
       <span>/</span>
       <span>Как я не продал бизнес за 27 млн</span>
-    </nav>
+    </div>
     <div class="art-meta">
       <span class="art-tag">Кейс</span>
       <time class="art-date" datetime="2026-03-09">9 марта 2026</time>
@@ -230,7 +280,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
       <article class="art-content">
 
-        <h2 id="nacalo">Как началась сделка</h2>
+        <h2 id="nacalo">Как началась сделка на 27 млн?</h2>
+        <p><strong>Коллега передал запрос от покупателя, который искал бизнес с прибылью от 2 млн в месяц — через 4 дня я нашёл подходящий объект.</strong></p>
         <p>Коллега передал запрос: покупатель ищет бизнес с прибылью от 2 млн рублей в месяц и окупаемостью до 16 месяцев. Параметры интересные — такой покупатель готов платить реальные деньги, не торговаться до потери смысла.</p>
         <p>Через 4 дня активного поиска нашёл подходящий объект — коммерческое общежитие для строительных компаний в центре Москвы.</p>
 
@@ -241,12 +292,13 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
 
         <p>Собственник продавал по понятной причине: хотел вложить деньги в выгодный объект в Берлине. Мотивация чёткая, сроки — тоже. Казалось, всё складывалось идеально.</p>
 
-        <h2 id="peregovory">63 дня переговоров</h2>
+        <h2 id="peregovory">Почему переговоры затянулись на 63 дня?</h2>
+        <p><strong>Сложность объекта и осторожность покупателя превратили сделку в полуторамесячный марафон из встреч, документов и переносов.</strong></p>
         <p>Переговоры растянулись на полтора месяца. Это само по себе тревожный сигнал, но тогда я объяснял это сложностью объекта и осторожностью покупателя.</p>
         <p>Хронология была примерно такой:</p>
         <ul>
           <li>Первые встречи, согласование параметров сделки</li>
-          <li>Сбор документов — только ожидание заняло две недели</li>
+          <li>Сбор документов и <a href="/blog/due-diligence">due diligence</a> — только ожидание заняло две недели</li>
           <li>Внутренние согласования на стороне покупателя</li>
           <li>Перенесённые встречи, новые вопросы, снова встречи</li>
           <li>Осмотр объекта вживую — наконец-то</li>
@@ -255,7 +307,13 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
         </ul>
         <p>На этом этапе я был уверен: сделка в кармане. Неделя ожидания — обычное дело.</p>
 
-        <h2 id="otval">Сделка рухнула</h2>
+        <div class="inline-cta">
+          <p>Хотите узнать реальную стоимость вашего бизнеса?</p>
+          <a href="../express-ocenka.html" class="btn-g" onclick="if(typeof ym!=='undefined')ym(85646347,'reachGoal','blog_inline_cta')">Экспресс-оценка <svg width="13" height="13" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+
+        <h2 id="otval">Почему сделка рухнула в последний момент?</h2>
+        <p><strong>Продавец отменил продажу, потому что за время переговоров изменился его контекст: берлинский проект потерял актуальность, бизнес пошёл в рост, нашёлся альтернативный источник денег.</strong></p>
         <p>Продавец позвонил сам. Без предупреждения, без нагнетания. Просто сказал: отменяю продажу.</p>
         <p>Причин оказалось несколько, и все они появились в последние недели переговоров:</p>
         <ul>
@@ -269,7 +327,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           <cite>Александр Неделюк, основатель A-Invest</cite>
         </blockquote>
 
-        <h2 id="oshibki">Ошибки, которые я разобрал после</h2>
+        <h2 id="oshibki">Какие ошибки брокера привели к срыву сделки?</h2>
+        <p><strong>Отсутствие автопролонгации договора, непроговорённые риски отказа и потеря контакта с контекстом продавца — три системные ошибки, которые я разобрал после.</strong></p>
         <p>Эта сделка стоила мне двух месяцев работы и, что важнее, показала несколько системных проблем в том, как я тогда работал.</p>
 
         <h3>Не было автопролонгации договора</h3>
@@ -299,7 +358,8 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           </div>
         </div>
 
-        <h2 id="uroki">Что изменил в работе после этого</h2>
+        <h2 id="uroki">Что изменить в работе, чтобы сделки не срывались?</h2>
+        <p><strong>Автопролонгация договора, разговор о рисках на старте, регулярная проверка мотивации продавца и жёсткие дедлайны на каждый этап.</strong></p>
         <p>Этот кейс дорого мне обошёлся — но сделал работу системнее. Вот что изменилось:</p>
         <ol>
           <li><strong>Автопролонгация в договоре.</strong> Пока идут активные переговоры — договор продолжает действовать. Это защищает и брокера, и честного продавца от случайных выходов.</li>
@@ -313,13 +373,51 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           <p>Переговоры — это не только про цену и условия. Это постоянный мониторинг мотивации продавца. Если мотивация исчезла — сделки не будет, сколько бы усилий вы ни вложили.</p>
         </div>
 
-        <h2 id="dlya-prodavtsov">Если вы продавец: что это значит для вас</h2>
-        <p>Если вы думаете о продаже бизнеса — будьте честны с брокером и с собой. Если у вас есть сомнения — лучше выяснить их до начала переговоров, чем тратить чужое и своё время на процесс, который вы не готовы завершить.</p>
-        <p>Хороший брокер не боится этого разговора. Он поможет разобраться: стоит ли продавать сейчас, есть ли альтернативы, что реально даст вам сделка. Иногда правильный ответ — «не продавайте».</p>
+        <p>Это не единичный случай. В другой нашей сделке ситуация была зеркальной — сорвалась не из-за продавца, а из-за покупателя:</p>
+
+        <blockquote>
+          <p>После 4 месяцев глубокого due diligence с крупным банком мы вышли на этап согласованного ДКП и назначенной даты подписания. Покупатель запросил бизнес-план по развитию — документ не совпал с ожиданиями. Сделка была разорвана за 2 дня до встречи у нотариуса, несмотря на огромные ресурсы, вложенные обеими сторонами.</p>
+          <cite>— Александр Неделюк, бизнес-брокер A-Invest</cite>
+        </blockquote>
+
+        <h2 id="dlya-prodavtsov">Что учесть продавцу, чтобы не сорвать сделку?</h2>
+        <p><strong>Будьте честны с брокером о своих сомнениях до начала переговоров — это сэкономит время и деньги обеим сторонам.</strong></p>
+        <p>Если вы думаете о продаже бизнеса — начните с <a href="/blog/podgotovka-k-prodazhe">подготовки к продаже</a> и будьте честны с брокером и с собой. Если у вас есть сомнения — лучше выяснить их до начала переговоров, чем тратить чужое и своё время на процесс, который вы не готовы завершить.</p>
+        <p>Хороший <a href="/blog/biznes-broker">бизнес-брокер</a> не боится этого разговора. Он поможет разобраться: стоит ли продавать сейчас, есть ли альтернативы, что реально даст вам сделка. Иногда правильный ответ — «не продавайте».</p>
 
         <hr>
 
-        <p>Если хотите обсудить свою ситуацию — пишите в Telegram: <a href="https://t.me/sashafyc" target="_blank" rel="noopener" style="color:var(--gold)">@sashafyc</a>. Отвечаю лично.</p>
+        <h2 id="faq">Частые вопросы</h2>
+        <ul class="faq-list">
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Почему срываются сделки по продаже бизнеса?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Основные причины срыва: изменение мотивации продавца (появились альтернативы, бизнес пошёл в рост), затянувшиеся переговоры, расхождение ожиданий по цене, проблемы на этапе due diligence и внешние факторы — изменение рыночных условий или личных обстоятельств сторон.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Как избежать срыва сделки при продаже бизнеса?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Включите в агентский договор автопролонгацию на время активных переговоров. Обсудите с продавцом возможные причины отказа до начала работы. Установите жёсткие дедлайны на каждый этап. Регулярно проверяйте мотивацию продавца — раз в 2 недели уточняйте, не изменились ли обстоятельства.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Нужен ли бизнес-брокер для продажи бизнеса?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">Для объектов дороже 5 млн рублей — да. Брокер берёт на себя оценку, упаковку, поиск покупателей, переговоры и юридическое сопровождение. Это экономит продавцу 10–20 часов в неделю и увеличивает итоговую цену на 20–30% за счёт правильного позиционирования и выхода на стратегических покупателей.</p>
+            </div>
+          </li>
+          <li class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+            <p class="faq-q" itemprop="name">Сколько времени занимает продажа бизнеса?</p>
+            <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+              <p class="faq-a" itemprop="text">В среднем продажа бизнеса занимает 3–6 месяцев. Сроки зависят от ниши, стоимости объекта, качества упаковки и каналов поиска покупателей. Объекты с прозрачной финансовой историей и оцифрованными процессами продаются быстрее — иногда за 1–2 месяца.</p>
+            </div>
+          </li>
+        </ul>
+
+        <hr>
+        <p class="art-updated">Обновлено: <time datetime="2026-03-12">12 марта 2026</time></p>
+
 
       </article>
 
@@ -329,12 +427,13 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           <div class="sdb-toc">
             <span class="sdb-toc-title">Содержание</span>
             <ol>
-              <li><a href="#nacalo">Как началась сделка</a></li>
-              <li><a href="#peregovory">63 дня переговоров</a></li>
-              <li><a href="#otval">Сделка рухнула</a></li>
-              <li><a href="#oshibki">Разбор ошибок</a></li>
-              <li><a href="#uroki">Что изменил в работе</a></li>
-              <li><a href="#dlya-prodavtsov">Если вы продавец</a></li>
+              <li><a href="#nacalo">Как началась сделка на 27 млн?</a></li>
+              <li><a href="#peregovory">Почему переговоры затянулись на 63 дня?</a></li>
+              <li><a href="#otval">Почему сделка рухнула?</a></li>
+              <li><a href="#oshibki">Какие ошибки брокера?</a></li>
+              <li><a href="#uroki">Что изменить в работе?</a></li>
+              <li><a href="#dlya-prodavtsov">Что учесть продавцу?</a></li>
+              <li><a href="#faq">Частые вопросы</a></li>
             </ol>
           </div>
           <div class="sdb-cta">
@@ -344,7 +443,7 @@ h1.art-title{font-size:clamp(28px,4vw,52px);font-weight:700;line-height:1.1;lett
           </div>
           <div class="sdb-author">
             <div class="sdb-author-inner">
-              <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="sdb-author-photo">
+              <img src="../Resources/photo.jpeg" alt="Александр Неделюк" class="sdb-author-photo" loading="lazy">
               <div>
                 <div class="sdb-author-name">Александр Неделюк</div>
                 <div class="sdb-author-role">Основатель A-Invest<br>Бизнес-брокер с 2018</div>

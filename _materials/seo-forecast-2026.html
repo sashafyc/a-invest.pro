@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A-Invest SEO Forecast 2026</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f1117; color: #e0e0e0; padding: 40px 20px; }
+  .container { max-width: 1100px; margin: 0 auto; }
+  h1 { font-size: 28px; margin-bottom: 8px; color: #fff; }
+  .subtitle { color: #888; font-size: 14px; margin-bottom: 40px; }
+  .card { background: #1a1d27; border-radius: 12px; padding: 28px; margin-bottom: 24px; border: 1px solid #2a2d3a; }
+  .card h2 { font-size: 18px; margin-bottom: 16px; color: #fff; }
+  .card h3 { font-size: 15px; margin: 20px 0 10px; color: #ccc; }
+  .card p { font-size: 14px; line-height: 1.7; color: #aaa; margin-bottom: 10px; }
+  .card ul { padding-left: 20px; margin-bottom: 12px; }
+  .card li { font-size: 14px; line-height: 1.7; color: #aaa; margin-bottom: 4px; }
+  .highlight { color: #5b9bd5; font-weight: 600; }
+  .warn { color: #e8a838; }
+  table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+  th { text-align: left; padding: 10px 12px; background: #22253a; color: #aaa; font-weight: 500; border-bottom: 1px solid #333; }
+  td { padding: 10px 12px; border-bottom: 1px solid #1f2233; color: #ccc; }
+  tr:hover td { background: #1f2233; }
+  .num { text-align: right; font-variant-numeric: tabular-nums; }
+  .chart-wrap { position: relative; height: 400px; margin: 20px 0; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 24px; }
+  .kpi { background: #1a1d27; border-radius: 10px; padding: 20px; border: 1px solid #2a2d3a; text-align: center; }
+  .kpi .value { font-size: 32px; font-weight: 700; color: #5b9bd5; }
+  .kpi .label { font-size: 12px; color: #888; margin-top: 4px; }
+  .band-low { color: #666; }
+  .band-mid { color: #5b9bd5; font-weight: 600; }
+  .band-high { color: #444; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 500; }
+  .tag-green { background: #1a3a2a; color: #4caf50; }
+  .tag-yellow { background: #3a3520; color: #e8a838; }
+  .tag-red { background: #3a1a1a; color: #e04040; }
+  .source { font-size: 11px; color: #555; margin-top: 6px; }
+  .footer { text-align: center; color: #444; font-size: 12px; margin-top: 40px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<h1>A-Invest — SEO Forecast 2026</h1>
+<p class="subtitle">Прогноз органического трафика | Март–Декабрь 2026 | v2.0 от 13.03.2026</p>
+
+<!-- KPI -->
+<div class="kpi-grid">
+  <div class="kpi">
+    <div class="value">100</div>
+    <div class="label">Статей к июню</div>
+  </div>
+  <div class="kpi">
+    <div class="value">3 500</div>
+    <div class="label">Органика/мес к декабрю (план)</div>
+  </div>
+  <div class="kpi">
+    <div class="value">~15 000</div>
+    <div class="label">Органических визитов за год</div>
+  </div>
+  <div class="kpi">
+    <div class="value">150+</div>
+    <div class="label">Ключевых слов в ядре</div>
+  </div>
+</div>
+
+<!-- Главный график -->
+<div class="card">
+  <h2>Прогноз органического трафика по месяцам</h2>
+  <p>Три сценария: пессимистичный, <span class="highlight">базовый (North Star)</span>, оптимистичный. Базовый — метрика по которой трекаем эффективность.</p>
+  <div class="chart-wrap">
+    <canvas id="mainChart"></canvas>
+  </div>
+</div>
+
+<!-- Таблица по месяцам -->
+<div class="card">
+  <h2>Помесячная разбивка</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Месяц</th>
+        <th class="num">Статей (нараст.)</th>
+        <th class="num">Страниц в индексе</th>
+        <th class="num">Пессим.</th>
+        <th class="num" style="color:#5b9bd5">Базовый</th>
+        <th class="num">Оптим.</th>
+        <th>Фаза</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Март</td><td class="num">15</td><td class="num">22</td><td class="num band-low">5</td><td class="num band-mid">15</td><td class="num band-high">30</td><td><span class="tag tag-yellow">Индексация</span></td></tr>
+      <tr><td>Апрель</td><td class="num">55</td><td class="num">62</td><td class="num band-low">20</td><td class="num band-mid">60</td><td class="num band-high">150</td><td><span class="tag tag-yellow">Индексация</span></td></tr>
+      <tr><td>Май</td><td class="num">95</td><td class="num">102</td><td class="num band-low">60</td><td class="num band-mid">180</td><td class="num band-high">400</td><td><span class="tag tag-yellow">Первые позиции</span></td></tr>
+      <tr><td>Июнь</td><td class="num">100</td><td class="num">107</td><td class="num band-low">150</td><td class="num band-mid">400</td><td class="num band-high">900</td><td><span class="tag tag-yellow">Long-tail рост</span></td></tr>
+      <tr><td>Июль</td><td class="num">100</td><td class="num">107</td><td class="num band-low">300</td><td class="num band-mid">750</td><td class="num band-high">1 600</td><td><span class="tag tag-green">Набор веса</span></td></tr>
+      <tr><td>Август</td><td class="num">100</td><td class="num">107</td><td class="num band-low">500</td><td class="num band-mid">1 200</td><td class="num band-high">2 600</td><td><span class="tag tag-green">Ускорение</span></td></tr>
+      <tr><td>Сентябрь</td><td class="num">100</td><td class="num">107</td><td class="num band-low">750</td><td class="num band-mid">1 800</td><td class="num band-high">3 800</td><td><span class="tag tag-green">Topical authority</span></td></tr>
+      <tr><td>Октябрь</td><td class="num">100</td><td class="num">107</td><td class="num band-low">1 000</td><td class="num band-mid">2 500</td><td class="num band-high">5 000</td><td><span class="tag tag-green">Масса контента</span></td></tr>
+      <tr><td>Ноябрь</td><td class="num">100</td><td class="num">107</td><td class="num band-low">1 300</td><td class="num band-mid">3 000</td><td class="num band-high">6 200</td><td><span class="tag tag-green">Стабильный рост</span></td></tr>
+      <tr><td>Декабрь</td><td class="num">100</td><td class="num">107</td><td class="num band-low">1 500</td><td class="num band-mid">3 500</td><td class="num band-high">7 000</td><td><span class="tag tag-green">Зрелость</span></td></tr>
+    </tbody>
+    <tfoot>
+      <tr style="font-weight:600; border-top: 2px solid #333;">
+        <td>ИТОГО за год</td><td></td><td></td>
+        <td class="num band-low">5 585</td>
+        <td class="num band-mid">13 405</td>
+        <td class="num band-high">27 680</td>
+        <td></td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+<!-- График статей -->
+<div class="card">
+  <h2>Темп публикации контента</h2>
+  <div class="chart-wrap" style="height:280px">
+    <canvas id="articlesChart"></canvas>
+  </div>
+</div>
+
+<!-- Допущения -->
+<div class="card">
+  <h2>Допущения модели</h2>
+
+  <h3>Исходные данные</h3>
+  <ul>
+    <li><span class="highlight">Домен 5 лет</span> (зарегистрирован ~2021). Не в песочнице, поисковики знают домен</li>
+    <li>Предыдущий сайт на Tilda: 840 визитов/год, из них 129 из поиска (~10/мес). SEO-авторитет не накоплен</li>
+    <li>Новый сайт выложен <span class="warn">7 марта 2026</span> — полностью новая структура, контент, разметка</li>
+    <li>Ссылочный профиль: практически пустой</li>
+  </ul>
+
+  <h3>Что заложено в модель</h3>
+  <ul>
+    <li>Публикация <span class="highlight">10–12 статей/неделю</span> до 100 статей (~конец мая)</li>
+    <li>Качественный on-page SEO: Article + FAQ schema, мета-теги, 1800–2100 слов/статья</li>
+    <li>Дистрибуция 20 статей на 4 платформы (Telegraph, TenChat, Дзен, Spark)</li>
+    <li>Семантическое ядро: 150+ ключей, кластеры по 5 темам</li>
+    <li>Yandex/Google split в нише: ~60/40</li>
+  </ul>
+
+  <h3>Что НЕ заложено (upside при реализации)</h3>
+  <ul>
+    <li>Платное ссылочное продвижение</li>
+    <li>Публикации на VC.ru и Habr</li>
+    <li>Город+ниша лендинги</li>
+    <li>Калькулятор стоимости бизнеса</li>
+    <li>Воронка догрева и exit-intent попапы</li>
+    <li>Контекстная реклама</li>
+  </ul>
+
+  <h3>Факторы риска</h3>
+  <ul>
+    <li>Яндекс может медленно переиндексировать сайт после миграции с Tilda</li>
+    <li>Конкуренция с Avito, Beboss, AlteraInvest за головные запросы</li>
+    <li>Алгоритмические апдейты Яндекса/Google</li>
+    <li>Нерешённые проблемы с хостингом (BingBot, автодеплой)</li>
+    <li>Отсутствие ссылочного профиля — главный ограничитель роста</li>
+  </ul>
+
+  <h3>Факторы роста</h3>
+  <ul>
+    <li>Домен 5 лет — нет песочницы, контент ранжируется быстрее</li>
+    <li>FAQ-схема на всех статьях — потенциал featured snippets</li>
+    <li>Авторский бренд (Александр Неделюк) = E-E-A-T сигнал</li>
+    <li>100 статей в одном семантическом кластере = topical authority</li>
+    <li>Внешние публикации (VC.ru, Habr) дадут ссылочный вес</li>
+  </ul>
+</div>
+
+<!-- Исследование рынка -->
+<div class="card">
+  <h2>Данные исследования</h2>
+
+  <h3>Ёмкость ниши (Яндекс, Россия, exact match оценки)</h3>
+  <table>
+    <thead><tr><th>Запрос</th><th class="num">~Exact/мес</th><th>Конкуренция</th></tr></thead>
+    <tbody>
+      <tr><td>продажа бизнеса</td><td class="num">8 000–15 000</td><td><span class="tag tag-red">Высокая</span></td></tr>
+      <tr><td>купить готовый бизнес</td><td class="num">5 000–10 000</td><td><span class="tag tag-red">Высокая</span></td></tr>
+      <tr><td>оценка бизнеса</td><td class="num">8 000–12 000</td><td><span class="tag tag-red">Высокая</span></td></tr>
+      <tr><td>как продать бизнес</td><td class="num">3 000–6 000</td><td><span class="tag tag-yellow">Средняя</span></td></tr>
+      <tr><td>бизнес брокер</td><td class="num">2 000–5 000</td><td><span class="tag tag-yellow">Средняя</span></td></tr>
+      <tr><td>стоимость бизнеса</td><td class="num">3 000–6 000</td><td><span class="tag tag-yellow">Средняя</span></td></tr>
+      <tr><td>подготовка к продаже бизнеса</td><td class="num">500–1 500</td><td><span class="tag tag-green">Низкая</span></td></tr>
+      <tr><td>due diligence бизнеса</td><td class="num">500–1 200</td><td><span class="tag tag-green">Низкая</span></td></tr>
+    </tbody>
+  </table>
+  <p class="source">Оценки на основе анализа ниши. Точные данные: wordstat.yandex.ru</p>
+
+  <h3>Средний CTR по позициям</h3>
+  <table>
+    <thead><tr><th>Позиция</th><th class="num">Яндекс</th><th class="num">Google</th></tr></thead>
+    <tbody>
+      <tr><td>#1</td><td class="num">25–30%</td><td class="num">28–35%</td></tr>
+      <tr><td>#2</td><td class="num">12–15%</td><td class="num">12–18%</td></tr>
+      <tr><td>#3</td><td class="num">8–10%</td><td class="num">7–10%</td></tr>
+      <tr><td>#4–5</td><td class="num">3–6%</td><td class="num">4–6%</td></tr>
+      <tr><td>#6–10</td><td class="num">1–3%</td><td class="num">1.5–3.5%</td></tr>
+    </tbody>
+  </table>
+  <p class="source">Источники: First Page Sage 2026, XMLRiver CTR Research, GrowthSrc 2025 Study</p>
+
+  <h3>Таймлайн ранжирования (домен 5 лет, новый контент)</h3>
+  <table>
+    <thead><tr><th>Этап</th><th>Яндекс</th><th>Google</th></tr></thead>
+    <tbody>
+      <tr><td>Переиндексация после миграции</td><td>2–4 недели</td><td>1–2 недели</td></tr>
+      <tr><td>Первый топ-20 (long-tail)</td><td>1–3 мес</td><td>1–2 мес</td></tr>
+      <tr><td>Стабильный топ-10 (средние ключи)</td><td>4–8 мес</td><td>3–6 мес</td></tr>
+      <tr><td>Головные запросы (ВЧ)</td><td>8–12+ мес</td><td>8–12+ мес</td></tr>
+    </tbody>
+  </table>
+  <p class="source">Источники: Ahrefs, Rush Agency, IT-Agency. Сроки скорректированы: домен не новый, но SEO-авторитет не накоплен</p>
+
+  <h3>Доля рынка: реалистичные ожидания</h3>
+  <table>
+    <thead><tr><th>Период</th><th class="num">Доля органики ниши</th><th>Комментарий</th></tr></thead>
+    <tbody>
+      <tr><td>Год 1 (2026)</td><td class="num">0.1–0.5%</td><td>Конкуренция с Avito, Beboss, AlteraInvest</td></tr>
+      <tr><td>Год 2 (2027)</td><td class="num">1–3%</td><td>Накопленный авторитет + ссылки</td></tr>
+      <tr><td>Год 3 (2028)</td><td class="num">3–7%</td><td>Потолок без ссылочного бюджета</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Как использовать -->
+<div class="card">
+  <h2>Как использовать этот прогноз</h2>
+  <p><span class="highlight">Базовый сценарий</span> — North Star Metric. Сравниваем реальные данные из Яндекс.Метрики (источник: переходы из поисковых систем) с базовым каждый месяц.</p>
+  <ul>
+    <li><strong>Реальность &gt; Базового × 1.3</strong> — опережаем, стратегия работает лучше ожиданий</li>
+    <li><strong>Реальность в пределах ±30% от Базового</strong> — всё по плану, продолжаем</li>
+    <li><strong>Реальность &lt; Базового × 0.7</strong> — отставание, анализ причин</li>
+    <li><strong>Реальность &lt; Пессимистичного</strong> — серьёзная проблема (алгоритм, технический баг, штраф)</li>
+  </ul>
+  <p>Первая значимая проверка — <span class="highlight">июнь 2026</span> (3 месяца после старта, 100 статей опубликовано). До этого данных слишком мало для выводов.</p>
+
+  <h3>Контрольные точки</h3>
+  <table>
+    <thead><tr><th>Дата</th><th>Что проверяем</th><th class="num">Базовый ориентир</th></tr></thead>
+    <tbody>
+      <tr><td>Апрель 2026</td><td>Все 100 статей проиндексированы?</td><td class="num">60 визитов/мес</td></tr>
+      <tr><td>Июнь 2026</td><td>Первые позиции в топ-20 по long-tail</td><td class="num">400 визитов/мес</td></tr>
+      <tr><td>Сентябрь 2026</td><td>Рост по средним ключам, topical authority</td><td class="num">1 800 визитов/мес</td></tr>
+      <tr><td>Декабрь 2026</td><td>Итог года. Готовность к масштабированию</td><td class="num">3 500 визитов/мес</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<p class="footer">A-Invest SEO Forecast | v2.0 | 13 марта 2026<br>Домен: a-invest.pro (5 лет). Новый сайт: 7 марта 2026. Базовый органический трафик до миграции: ~10 визитов/мес</p>
+
+</div>
+
+<script>
+const ctx1 = document.getElementById('mainChart').getContext('2d');
+const months = ['Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'];
+const pessimistic = [5, 20, 60, 150, 300, 500, 750, 1000, 1300, 1500];
+const baseline =    [15, 60, 180, 400, 750, 1200, 1800, 2500, 3000, 3500];
+const optimistic =  [30, 150, 400, 900, 1600, 2600, 3800, 5000, 6200, 7000];
+
+new Chart(ctx1, {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: [
+      {
+        label: 'Оптимистичный',
+        data: optimistic,
+        borderColor: 'rgba(91,155,213,0.25)',
+        backgroundColor: 'rgba(91,155,213,0.05)',
+        fill: '+1',
+        borderWidth: 1,
+        borderDash: [4,4],
+        pointRadius: 0,
+        tension: 0.3
+      },
+      {
+        label: 'Базовый (план)',
+        data: baseline,
+        borderColor: '#5b9bd5',
+        backgroundColor: 'rgba(91,155,213,0.1)',
+        fill: false,
+        borderWidth: 3,
+        pointRadius: 5,
+        pointBackgroundColor: '#5b9bd5',
+        tension: 0.3
+      },
+      {
+        label: 'Пессимистичный',
+        data: pessimistic,
+        borderColor: 'rgba(91,155,213,0.25)',
+        backgroundColor: 'rgba(91,155,213,0.05)',
+        fill: '-1',
+        borderWidth: 1,
+        borderDash: [4,4],
+        pointRadius: 0,
+        tension: 0.3
+      }
+    ]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { labels: { color: '#888', font: { size: 12 } } },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) {
+            return ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString('ru-RU') + ' визитов/мес';
+          }
+        }
+      }
+    },
+    scales: {
+      x: { ticks: { color: '#666' }, grid: { color: '#1f2233' } },
+      y: {
+        ticks: {
+          color: '#666',
+          callback: function(v) { return v >= 1000 ? (v/1000) + 'K' : v; }
+        },
+        grid: { color: '#1f2233' },
+        title: { display: true, text: 'Органических визитов / месяц', color: '#555' }
+      }
+    }
+  }
+});
+
+const ctx2 = document.getElementById('articlesChart').getContext('2d');
+const articles = [15, 55, 95, 100, 100, 100, 100, 100, 100, 100];
+
+new Chart(ctx2, {
+  type: 'bar',
+  data: {
+    labels: months,
+    datasets: [{
+      label: 'Статей (накопительно)',
+      data: articles,
+      backgroundColor: articles.map(v => v < 100 ? '#e8a838' : '#4caf50'),
+      borderRadius: 4,
+      barThickness: 40
+    }]
+  },
+  options: {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        callbacks: {
+          label: function(ctx) { return ctx.parsed.y + ' статей'; }
+        }
+      }
+    },
+    scales: {
+      x: { ticks: { color: '#666' }, grid: { display: false } },
+      y: {
+        ticks: { color: '#666' },
+        grid: { color: '#1f2233' },
+        max: 120,
+        title: { display: true, text: 'Статей опубликовано', color: '#555' }
+      }
+    }
+  }
+});
+</script>
+</body>
+</html>
