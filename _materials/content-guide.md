@@ -48,8 +48,8 @@
 | 17 | due-diligence | Due diligence бизнеса: полный гайд | Due Diligence | 🔴 | ✅ | 📄 `konsol-pro-kak-prodat-biznes.md` — раздел «Этап 6: DD». |
 | 18 | proverka-biznesa | Проверка бизнеса перед покупкой: чеклист | Due Diligence | 🔴 | ✅ | Из TG: описание передачи объектов покупателям. |
 | 19 | kupit-biznes | Как купить бизнес: с чего начать | Покупка бизнеса | 🔴 | ✅ | Из TG: профиль покупателей. |
-| 20 | kupit-gotovyy-biznes | Покупка готового бизнеса: этапы сделки | Покупка бизнеса | 🔴 | ⬜ | Из TG: передача шоурума VIAN — 5 шагов. |
-| 21 | nayti-investora | Как найти инвестора в бизнес: каналы и стратегии | Инвестиции | 🔴 | ⬜ | Из TG: поиск инвестора в Шаверно. |
+| 20 | kupit-gotovyy-biznes | Покупка готового бизнеса: этапы сделки | Покупка бизнеса | 🔴 | ✅ | Из TG: передача шоурума VIAN — 5 шагов. |
+| 21 | nayti-investora | Как найти инвестора в бизнес: каналы и стратегии | Инвестиции | 🔴 | ✅ | Из TG: поиск инвестора в Шаверно. |
 | 22 | poisk-pokupatelya | Поиск покупателя для бизнеса: где и как искать | Продажа бизнеса | 🔴 | ⬜ | 📄 `konsol-pro-kak-prodat-biznes.md` — таблица 4 каналов. |
 | 23 | prodazha-ooo | Как продать ООО: пошаговая инструкция | Продажа бизнеса | 🔴 | ⬜ | Юридическая специфика: доля или активы. Нотариус, ФНС, устав. |
 | 24 | prodazha-doli | Продажа доли бизнеса: как оформить сделку | Продажа бизнеса | 🔴 | ⬜ | Из TG: продажа доли в Шаверно (50%). |
@@ -149,7 +149,8 @@
 | 13 | podgotovka-k-prodazhe | 🎯 Чеклист | ✅ | ✅ | ✅ | ✅ | Дзен: dzen.ru/a/abHK7zm1qCkTOlVn; TC: tenchat.ru/media/5044768; TG: telegra.ph/...; Spark: компания, spark.ru/startup/a-invest/blog/310611 |
 | 15 | biznes-broker | 📌🔍 Pillar | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Biznes-broker-kto-ehto-i-zachem-nuzhen-03-12; TC: tenchat.ru/media/5049966; DZ: dzen.ru/a/abNMYLXAA1C1yTRF; Spark: компания, spark.ru/startup/a-invest/blog/310896 |
 | 16 | uslugi-brokera | 📌 Бизнес-брокер | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Uslugi-biznes-brokera-chto-vhodit-i-skolko-Aleksandr-Nedelyuk--A-InveststoBiznes-broker-beryot-na-sebya-ves-process-prodazhi-ot--03-13; TC: tenchat.ru/media/5055442-uslugi-biznesbrokera-chto-vkhodit-i-skolko-stoit; DZ: dzen.ru/a/abSQaVMw-GCMyx_O; Spark: личный, spark.ru/user/268098/blog/311099/uslugi-biznes-brokera-ekonomika-sdelki-i-kogda-eto-okupaetsya |
-| 17 | due-diligence | 📌🎯 Pillar | ⬜ | — | ⬜ | ⬜ | |
+| 17 | due-diligence | 📌🎯 Pillar | [✅](https://telegra.ph/Due-diligence-biznesa-polnyj-gajd-po-proverke-pered-sdelkoj-03-14) | [✅](https://tenchat.ru/media/5058673-due-diligence-biznesa-chto-proveryat-pered-pokupkoy) | [✅](https://dzen.ru/a/abUcJibgsE8CxSYX) | [✅](https://spark.ru/startup/a-invest/blog/311118/due-diligence-biznesa-chto-proveryat-pered-pokupkoj-i-skolko-eto-stoit) | TG: telegra.ph/Due-diligence-biznesa-polnyj-gajd-po-proverke-pered-sdelkoj-03-14; TC: tenchat.ru/media/5058673; DZ: dzen.ru/a/abUcJibgsE8CxSYX; Spark: компания, spark.ru/startup/a-invest/blog/311118 |
+| 20 | kupit-gotovyy-biznes | 🔴 Покупка | ⬜ | ⬜ | ⬜ | ⬜ | |
 | 21 | nayti-investora | 🔍 ВЧ-запрос | ⬜ | ⬜ | ⬜ | ⬜ | |
 | 28 | prodazha-it | 🔍🎯 Ниша | ⬜ | ⬜ | ⬜ | ⬜ | |
 | 29 | prodazha-saas | 🔍 Ниша | ⬜ | ⬜ | ⬜ | ⬜ | |

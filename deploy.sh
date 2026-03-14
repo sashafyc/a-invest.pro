@@ -12,11 +12,13 @@ echo "🚀 Деплой на $REMOTE_HOST..."
 
 rsync -avz --delete \
   --exclude='.git/' \
+  --exclude='.github/' \
   --exclude='_materials/' \
   --exclude='_distributions/' \
   --exclude='_template.html' \
   --exclude='README.md' \
   --exclude='.gitignore' \
+  --exclude='.DS_Store' \
   --exclude='deploy.sh' \
   -e "ssh -4 -o ConnectTimeout=10" \
   ./ "${REMOTE_USER}@${REMOTE_HOST}:${REMOTE_DIR}"

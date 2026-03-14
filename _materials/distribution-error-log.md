@@ -36,11 +36,16 @@
 | Хэштег `#предпринимательство` автозаменяется на `#предпринимательствоспб` | TenChat показывает выпадающее меню автодополнения хэштегов и подставляет первый вариант | После ввода хэштегов нажать Escape ДО клика куда-либо, чтобы закрыть автодополнение |
 
 ### Рабочий алгоритм TenChat
-1. Перейти на `tenchat.ru` → кнопка "+" → открывается `/editor`
-2. Ввести заголовок (до 80 символов)
-3. Кликнуть в body (ниже тулбара)
-4. Тип: `type` action с текстом поста
-5. Опубликовать
+1. navigate → `tenchat.ru/editor` (можно напрямую, можно через кнопку "+")
+2. Подождать 3–5 сек (загрузка редактора — спиннер визуальный, DOM грузится быстрее)
+3. Клик в заголовок (~600, 170) → `type` заголовок (до 80 символов)
+4. Клик в body (~600, 400) — ниже тулбара
+5. `type` action с текстом + хэштегами (работает для TenChat, в отличие от Дзен/Draft.js)
+   - Альтернатива: `navigator.clipboard.writeText(text)` → Cmd+V (надёжнее)
+6. **Escape** — закрыть автодополнение хэштегов
+7. Скриншот — проверить визуально (прокрутить вверх)
+8. Клик «Опубликовать» (~858, 840)
+9. Сохранить URL из title вкладки
 
 ---
 
@@ -56,7 +61,8 @@
 | `type` action вставляет текст без пробелов | Draft.js не обрабатывает пробелы из `type` корректно | Для заголовка: `document.execCommand('insertText', false, 'текст')` через JS (focus на editors[0]) |
 | Буфер обмена (Cmd+V) вставляет в неверное поле | Фокус был не в body а в title или вне редактора | Кликнуть в body ПЕРЕД загрузкой буфера, затем ещё раз после загрузки |
 | Белый экран после paste | Рендер Draft.js сломался | Перезагрузить страницу (navigate), черновик автосохранён |
-| Paste через Cmd+V не вставляет в body (клик по координатам) | Фокус не попадает в body через обычный клик | Использовать JS: `editors[1].focus(); editors[1].click();` ПЕРЕД Cmd+V |
+| Paste через Cmd+V не вставляет в body (клик по координатам) | Фокус не попадает в body через обычный клик | Кликнуть прямо на плейсхолдер «Текст» (~310, 220), НЕ через JS `editors[1]` |
+| После `execCommand('insertText')` на `editors[0]` все `.public-DraftEditor-content` элементы исчезают (querySelectorAll возвращает 0) | Draft.js перерендеривает DOM после вставки заголовка — старые ссылки на editors[] невалидны | НЕ использовать `editors[1]` после вставки заголовка. Кликнуть прямо на плейсхолдер «Текст» (~310, 220) через `computer left_click` |
 | Кнопка «Опубликовать» в модалке не кликается по координатам (баннер Claude) | Баннер перекрывает | Использовать JS: `buttons.filter(b => b.text === 'Опубликовать')[1].click()` — index [1] = кнопка в модалке |
 | `await` в JS tool | Top-level await не поддерживается | `.then()` вместо `await` |
 
@@ -68,12 +74,12 @@
    editors[0].focus();
    document.execCommand('insertText', false, 'Заголовок');
    ```
-3. Кликнуть в body (editors[1] или координаты ниже заголовка)
+3. **Кликнуть на плейсхолдер «Текст»** (~310, 220) через `computer left_click` — НЕ через JS `editors[1]` (после execCommand элементы исчезают из DOM!)
 4. Загрузить буфер:
    ```js
    navigator.clipboard.write([new ClipboardItem({'text/html': new Blob([html], {type:'text/html'})})]).then(...)
    ```
-5. Кликнуть в body ещё раз (фокус!)
+5. Кликнуть на «Текст» ещё раз (~310, 220) — убедиться в фокусе
 6. Cmd+V
 7. Проверить скриншотом (прокрутить вверх!)
 8. **Публикация через JS** (2 шага):
@@ -90,7 +96,9 @@
 | Сессия протухает между статьями | Долгий простой, навигация на 404-страницы (/post/create, /add) | НЕ переходить на несуществующие URL. Использовать только кнопку карандаша в хедере |
 | `/post/create` и `/add` → 404 | Spark не поддерживает прямые URL для создания поста | Кнопка карандаша в хедере (зелёная) → открывает `/write/1/{id}` |
 | Кнопка "Опубликовать" — не `<button>` | Это `<div class="post-form__submit">` | `document.querySelector('.post-form__submit').click()` |
-| `.post-form__submit.click()` открывает новый пустой таб вместо публикации | JS click на этот div ведёт себя иначе чем реальный клик | Кликать по реальной кнопке «Опубликовать» внизу страницы через `computer left_click` по координатам, НЕ через JS |
+| `.post-form__submit.click()` открывает новый пустой таб вместо публикации | JS click на этот div ведёт себя иначе чем реальный клик | **НЕ кликать вообще.** Публиковать через JS: `var btn = document.querySelector('.post-form__submit'); btn.classList.remove('loading'); spark.post.save(btn);` |
+| `computer left_click` по кнопке «Опубликовать» тоже открывает дубль-таб | Даже реальный клик ведёт себя как навигация, а не как submit | Использовать `spark.post.save(btn)` через JS (см. выше) |
+| Delimiter блок в EditorJS показывает ошибку «The block can not be displayed correctly» | Spark не поддерживает delimiter блок в EditorJS | **НЕ использовать delimiter** в blocks для editor.render(). Вместо `<hr>` просто не добавлять этот блок |
 | Spark разлогинивает пока Claude ищет кнопки и делает скриншоты | Сессия протухает за секунды | Заполнять ВСЁ одним JS вызовом (setVal + editor.render), потом СРАЗУ click Опубликовать — максимум 2 action'а после логина |
 
 ### Рабочий алгоритм Spark (МАКСИМАЛЬНАЯ СКОРОСТЬ — сессия протухает за секунды!)
@@ -110,9 +118,15 @@
    setVal(document.querySelector('input[name="tags"]'), 'теги через запятую');
    window.editor.render({blocks: [...]});
    ```
-4. **СРАЗУ** scroll вниз → клик по кнопке «Опубликовать» (синяя кнопка внизу страницы, ~345, 293 от низа) — НЕ через JS `.click()`, а через `computer left_click`!
-5. **НЕ делать лишних скриншотов** между шагами 2-4. Максимум 3 действия: карандаш → JS fill → scroll+click publish
-6. **ВАЖНО:** `.post-form__submit.click()` через JS НЕ работает (открывает пустой таб). Только реальный клик по видимой кнопке «Опубликовать»
+4. **СРАЗУ** публикация через JS (НЕ клик по кнопке!):
+   ```js
+   var btn = document.querySelector('.post-form__submit');
+   btn.classList.remove('loading');
+   spark.post.save(btn);
+   ```
+5. **НЕ делать лишних скриншотов** между шагами 2-4. Максимум 3 действия: карандаш → JS fill → JS publish
+6. **ВАЖНО:** НИ `.click()`, НИ `computer left_click` по кнопке «Опубликовать» НЕ работают (оба открывают дубль-таб). Только `spark.post.save(btn)`
+7. **ВАЖНО:** НЕ использовать `delimiter` блок в `editor.render()` — Spark его не поддерживает. Вместо `<hr>` просто пропустить блок
 
 ---
 
@@ -122,11 +136,13 @@
 |--------|---------|---------|
 | `rsync exit code 11` — unexpected end of file | Путь `~/a-invest.pro/public_html/` не существует на сервере | Правильный путь: `~/a-invest/public_html/` (без `.pro`) |
 | `scp: dest open "a-invest.pro/public_html/blog/": No such file or directory` | Та же причина — неверный путь | `~/a-invest/public_html/` |
+| На сервер попали _materials/, _distributions/, .git/, _template.html и пр. | Деплой через голый `rsync` без `--exclude` (команда из лога) вместо `./deploy.sh` | **ВСЕГДА** деплоить через `./deploy.sh`, НИКОГДА через голый rsync |
 
-### Рабочий алгоритм деплоя (rsync)
+### Рабочий алгоритм деплоя
 ```
-cd "/Users/sashafyc/Desktop/A-INVEST/Сайт" && rsync -avz --delete -e "ssh -o ConnectTimeout=30 -o ServerAliveInterval=15" ./ cy95045@vh432.timeweb.ru:~/a-invest/public_html/
+cd "/Users/sashafyc/Desktop/A-INVEST/Сайт" && ./deploy.sh
 ```
+**ВАЖНО:** ВСЕГДА использовать `./deploy.sh` — НЕ голый rsync! В deploy.sh прописаны --exclude для _materials/, _distributions/, .git/, .github/, _template.html, README.md, .gitignore, .DS_Store, deploy.sh. Без exclude rsync выгрузит на сервер внутренние файлы проекта.
 **ВАЖНО:** путь на сервере `~/a-invest/public_html/` — НЕ `~/a-invest.pro/`
 
 ---
