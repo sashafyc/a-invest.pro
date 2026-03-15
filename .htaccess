@@ -13,6 +13,7 @@ Redirect 301 /page26698073.html /index.html
 Redirect 301 /price-list /index.html
 Redirect 301 /consulting /about.html
 Redirect 301 /valuation /index.html
+Redirect 301 /_template.html /index.html
 
 # Кэширование статики
 <IfModule mod_expires.c>

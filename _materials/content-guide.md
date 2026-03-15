@@ -49,13 +49,13 @@
 | 18 | proverka-biznesa | Проверка бизнеса перед покупкой: чеклист | Due Diligence | 🔴 | ✅ | Из TG: описание передачи объектов покупателям. |
 | 19 | kupit-biznes | Как купить бизнес: с чего начать | Покупка бизнеса | 🔴 | ✅ | Из TG: профиль покупателей. |
 | 20 | kupit-gotovyy-biznes | Покупка готового бизнеса: этапы сделки | Покупка бизнеса | 🔴 | ✅ | Из TG: передача шоурума VIAN — 5 шагов. |
-| 21 | nayti-investora | Как найти инвестора в бизнес: каналы и стратегии | Инвестиции | 🔴 | ✅ | Из TG: поиск инвестора в Шаверно. |
-| 22 | poisk-pokupatelya | Поиск покупателя для бизнеса: где и как искать | Продажа бизнеса | 🔴 | ⬜ | 📄 `konsol-pro-kak-prodat-biznes.md` — таблица 4 каналов. |
-| 23 | prodazha-ooo | Как продать ООО: пошаговая инструкция | Продажа бизнеса | 🔴 | ⬜ | Юридическая специфика: доля или активы. Нотариус, ФНС, устав. |
-| 24 | prodazha-doli | Продажа доли бизнеса: как оформить сделку | Продажа бизнеса | 🔴 | ⬜ | Из TG: продажа доли в Шаверно (50%). |
-| 25 | prodazha-kompanii | Как продать компанию: этапы и документы | Продажа бизнеса | 🔴 | ⬜ | Крупные сделки, переговоры, NDA. |
-| 26 | kak-prodat-kompaniyu | Как продать компанию быстро и выгодно | Продажа бизнеса | 🔴 | ⬜ | 📄 `konsol-pro-kak-prodat-biznes.md` — полный гайд. |
-| 27 | kak-prodat-biznes-investoru | Как продать бизнес инвестору: стратегия и подготовка | Продажа бизнеса | 🔴 | ⬜ | Из TG: инвест-предложения (Шаверно, дарк-китчен). |
+| 21 | nayti-investora | Как найти инвестора в бизнес: каналы и стратегии | Инвестиции | 🔴 | ✅ | Из TG: поиск инвестора в сеть общепита. |
+| 22 | poisk-pokupatelya | Поиск покупателя для бизнеса: где и как искать | Продажа бизнеса | 🔴 | ✅ | 📄 `konsol-pro-kak-prodat-biznes.md` — таблица 4 каналов. |
+| 23 | prodazha-ooo | Как продать ООО: пошаговая инструкция | Продажа бизнеса | 🔴 | ✅ | Юридическая специфика: доля или активы. Нотариус, ФНС, устав. |
+| 24 | prodazha-doli | Продажа доли бизнеса: как оформить сделку | Продажа бизнеса | 🔴 | ✅ | Из TG: продажа доли в сети общепита (50%). |
+| 25 | prodazha-kompanii | Как продать компанию: этапы и документы | Продажа бизнеса | 🔴 | ✅ | Крупные сделки, переговоры, NDA. |
+| 26 | kak-prodat-kompaniyu | Как продать компанию быстро и выгодно | Продажа бизнеса | 🔴 | ✅ | 📄 `konsol-pro-kak-prodat-biznes.md` — полный гайд. |
+| 27 | kak-prodat-biznes-investoru | Как продать бизнес инвестору: стратегия и подготовка | Продажа бизнеса | 🔴 | ✅ | Из TG: инвест-предложения (сеть общепита, дарк-китчен). |
 | 28 | prodazha-it-kompanii | Продажа IT-компании: что важно знать | Активы | 🔴 | ⬜ | Специфика IT: ИС, команда, ключевые разработчики. |
 | 29 | prodazha-saas | Продажа SaaS-бизнеса: метрики и оценка | Активы | 🔴 | ⬜ | MRR, ARR, churn, LTV, CAC. |
 | 30 | metody-ocenki-biznesa | Методы оценки бизнеса: сравнительный, доходный, затратный | Оценка бизнеса | 🔴 | ⬜ | Детальное объяснение + таблица «когда какой метод». |
@@ -79,7 +79,7 @@
 | 48 | agentstvo-prodazhi | Агентство по продаже бизнеса: как выбрать | Бизнес-брокер | 🟡 | ⬜ | Критерии выбора. Позиционирование A-Invest. |
 | 49 | soprovozhdenie-sdelki | Сопровождение сделки продажи бизнеса: что включает | Бизнес-брокер | 🟡 | ⬜ | От заявки до закрытия. |
 | 50 | kupit-kompaniyu | Как купить компанию: юридические аспекты | Покупка бизнеса | 🟡 | ⬜ | Покупка через долю или через активы. |
-| 51 | kupit-dolyu | Как купить долю в бизнесе: что проверить | Покупка бизнеса | 🟡 | ⬜ | Из TG: пример Шаверно. |
+| 51 | kupit-dolyu | Как купить долю в бизнесе: что проверить | Покупка бизнеса | 🟡 | ⬜ | Из TG: пример покупки доли в сети общепита. |
 | 52 | investicii-biznes | Инвестиции в бизнес: как выбрать объект | Инвестиции | 🟡 | ⬜ | Из TG: обзор проектов (дарк-китчен, шоурум, WB). |
 | 53 | strategicheskiy-investor | Стратегический инвестор: в чём отличие от финансового | Инвестиции | 🟡 | ⬜ | Синергия vs. доходность. |
 | 54 | prodazha-restorana | Продажа ресторана: что важно покупателю | Ниша | 🟡 | ⬜ | Из TG: дарк-китчен СПб (выручка 550–650 тыс.). |
@@ -150,8 +150,8 @@
 | 15 | biznes-broker | 📌🔍 Pillar | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Biznes-broker-kto-ehto-i-zachem-nuzhen-03-12; TC: tenchat.ru/media/5049966; DZ: dzen.ru/a/abNMYLXAA1C1yTRF; Spark: компания, spark.ru/startup/a-invest/blog/310896 |
 | 16 | uslugi-brokera | 📌 Бизнес-брокер | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Uslugi-biznes-brokera-chto-vhodit-i-skolko-Aleksandr-Nedelyuk--A-InveststoBiznes-broker-beryot-na-sebya-ves-process-prodazhi-ot--03-13; TC: tenchat.ru/media/5055442-uslugi-biznesbrokera-chto-vkhodit-i-skolko-stoit; DZ: dzen.ru/a/abSQaVMw-GCMyx_O; Spark: личный, spark.ru/user/268098/blog/311099/uslugi-biznes-brokera-ekonomika-sdelki-i-kogda-eto-okupaetsya |
 | 17 | due-diligence | 📌🎯 Pillar | [✅](https://telegra.ph/Due-diligence-biznesa-polnyj-gajd-po-proverke-pered-sdelkoj-03-14) | [✅](https://tenchat.ru/media/5058673-due-diligence-biznesa-chto-proveryat-pered-pokupkoy) | [✅](https://dzen.ru/a/abUcJibgsE8CxSYX) | [✅](https://spark.ru/startup/a-invest/blog/311118/due-diligence-biznesa-chto-proveryat-pered-pokupkoj-i-skolko-eto-stoit) | TG: telegra.ph/Due-diligence-biznesa-polnyj-gajd-po-proverke-pered-sdelkoj-03-14; TC: tenchat.ru/media/5058673; DZ: dzen.ru/a/abUcJibgsE8CxSYX; Spark: компания, spark.ru/startup/a-invest/blog/311118 |
-| 20 | kupit-gotovyy-biznes | 🔴 Покупка | ⬜ | ⬜ | ⬜ | ⬜ | |
-| 21 | nayti-investora | 🔍 ВЧ-запрос | ⬜ | ⬜ | ⬜ | ⬜ | |
+| 20 | kupit-gotovyy-biznes | 🔴 Покупка | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Pokupka-gotovogo-biznesa-ehtapy-sdelki-ot-poiska-do-peredachi-03-14; TC: tenchat.ru/media/5061258-pokupka-gotovogo-biznesa-5-etapov-sdelki; DZ: dzen.ru/a/abXNb6bYWw_SBu3j; Spark: личный, spark.ru/user/268098/blog/311221 |
+| 21 | nayti-investora | 🔍 ВЧ-запрос | ✅ | ✅ | ✅ | ✅ | TG: telegra.ph/Kak-najti-investora-v-biznes-kanaly-strategii-i-oshibki-03-14; TC: tenchat.ru/media/5061277-kak-nayti-investora-v-biznes-6-kanalov; DZ: dzen.ru/a/abXPfK-B01MXAub2; Spark: компания, spark.ru/startup/a-invest/blog/311222 |
 | 28 | prodazha-it | 🔍🎯 Ниша | ⬜ | ⬜ | ⬜ | ⬜ | |
 | 29 | prodazha-saas | 🔍 Ниша | ⬜ | ⬜ | ⬜ | ⬜ | |
 | 33 | riski-pokupki | 🔍🔥 Топ-10 | ⬜ | ⬜ | ⬜ | ⬜ | |
@@ -275,20 +275,37 @@
 ```
 Шаг  Действие
 ───  ────────
-0    Spark делать ПОСЛЕДНИМ. Саша логинится + переключает на нужный профиль (личный/компания) → говорит «готово»
-1    Клик зелёный карандаш в хедере (~893, 27) → открывается /write/1/{id}
-2    ОДИН JS вызов — заполнить ВСЁ разом:
-     - setVal(input[name="title"], заголовок)
-     - setVal(textarea[name="subtitle"], вступительный абзац)
-     - setVal(input[name="tags"], теги)
-     - window.editor.render({blocks: [...]})
-3    СРАЗУ scroll вниз → клик «Опубликовать» (синяя кнопка, ~345, 293) — РЕАЛЬНЫЙ клик, НЕ JS!
+0    Spark делать ПОСЛЕДНИМ. Саша логинится → говорит «готово»
+1    Клик зелёный карандаш в хедере (~858, 24) → открывается /write/1/{id}
+2    Если нужен другой профиль — клик стрелку ▼ рядом с именем профиля (~813, 123) → выбрать
+3    ОДИН JS вызов — заполнить ВСЁ разом:
+
+     function setInputVal(sel, val) {
+       var el = document.querySelector(sel);
+       Object.getOwnPropertyDescriptor(HTMLInputElement.prototype, 'value').set.call(el, val);
+       el.dispatchEvent(new Event('input', {bubbles: true}));
+       el.dispatchEvent(new Event('change', {bubbles: true}));
+     }
+     function setTextareaVal(sel, val) {
+       var el = document.querySelector(sel);
+       Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype, 'value').set.call(el, val);
+       el.dispatchEvent(new Event('input', {bubbles: true}));
+       el.dispatchEvent(new Event('change', {bubbles: true}));
+     }
+     setInputVal('input[name="title"]', заголовок);
+     setTextareaVal('textarea[name="subtitle"]', вступительный абзац);
+     setInputVal('input[name="tags"]', теги через запятую);
+     window.editor.render({blocks: [...]});
+
+4    Сказать Саше ключевые темы для ввода (теги) → Саша нажимает «Опубликовать» вручную
 ```
 
 **Критично для Spark:**
-- Сессия протухает за секунды! Максимум 3 действия после логина: карандаш → JS fill → scroll+click publish
-- `.post-form__submit.click()` через JS НЕ работает (открывает пустой таб) — только реальный клик
+- Сессия протухает за секунды! Максимум 3 действия после логина
+- Публикацию нажимает САША вручную (реальный клик через автоматизацию ненадёжен)
+- Если нужен backup: `spark.post.save(document.querySelector('.post-form__submit'))` через JS тоже работает
 - setVal для input и textarea нужны РАЗНЫЕ prototype setter (HTMLInputElement vs HTMLTextAreaElement)
+- Профиль переключается прямо в форме через дропдаун — не нужно выходить и заходить
 - Не кликать в правый верхний угол — там аватар, откроется меню профиля
 
 ### Порядок публикации
